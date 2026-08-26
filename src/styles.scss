@@ -1,0 +1,248 @@
+:root {
+  --font-primary: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-primary: #E86A17;
+  --color-primary-dark: #C9540C;
+  --color-primary-light: #FF8838;
+  --color-primary-glow: rgba(232, 106, 23, 0.25);
+  
+  --color-bg-base: #0B0B0E;
+  --color-bg-surface: #121217;
+  --color-bg-card: #181820;
+  --color-bg-card-hover: #22222D;
+  --color-border: #262633;
+  --color-border-hover: #3E3E52;
+  
+  --color-text-main: #F8FAFC;
+  --color-text-sub: #CBD5E1;
+  --color-text-muted: #8E9BAE;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #262633;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Fluid Typography */
+h1, .display-4, .display-5 {
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 575.98px) {
+  h1, .display-4 {
+    font-size: 1.85rem !important;
+  }
+  .display-5 {
+    font-size: 1.65rem !important;
+  }
+  .display-6 {
+    font-size: 1.45rem !important;
+  }
+  .lead {
+    font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  h1, .display-4 {
+    font-size: 2.35rem !important;
+  }
+  .display-5 {
+    font-size: 2rem !important;
+  }
+}
+
+/* Utility & Glow Classes */
+.text-orange-glow {
+  color: var(--color-primary-light);
+  text-shadow: 0 0 20px var(--color-primary-glow);
+}
+
+.bg-glass {
+  background: rgba(24, 24, 32, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bg-surface-glass {
+  background: rgba(18, 18, 23, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 106, 23, 0.15);
+}
+
+.gradient-orange-text {
+  background: linear-gradient(135deg, #FFF 20%, #FF9E59 80%, #E86A17 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-badge {
+  background: linear-gradient(135deg, rgba(232, 106, 23, 0.2) 0%, rgba(201, 84, 12, 0.05) 100%);
+  border: 1px solid rgba(232, 106, 23, 0.35);
+  color: #FFA263;
+}
+
+.btn-primary-orange {
+  background: linear-gradient(135deg, #E86A17 0%, #C9540C 100%);
+  color: #FFFFFF;
+  border: none;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(232, 106, 23, 0.35);
+}
+.btn-primary-orange:hover {
+  background: linear-gradient(135deg, #FF7B24 0%, #D85D10 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(232, 106, 23, 0.5);
+  color: #FFFFFF;
+}
+
+.btn-outline-orange {
+  background: transparent;
+  color: #FFA263;
+  border: 1px solid rgba(232, 106, 23, 0.5);
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.btn-outline-orange:hover {
+  background: rgba(232, 106, 23, 0.15);
+  border-color: var(--color-primary-light);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+.btn-whatsapp:hover {
+  background: #20BA5A;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+}
+
+/* Geometric Polygon Background Pattern */
+.polygon-pattern-bg {
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(232, 106, 23, 0.12) 0%, transparent 35%),
+    radial-gradient(circle at 85% 75%, rgba(201, 84, 12, 0.08) 0%, transparent 40%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+.card-luxury {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.card-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(232, 106, 23, 0), transparent);
+  transition: all 0.3s ease;
+}
+.card-luxury:hover {
+  border-color: rgba(232, 106, 23, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(232, 106, 23, 0.15);
+}
+.card-luxury:hover::before {
+  background: linear-gradient(90deg, transparent, #E86A17, transparent);
+}
+
+/* Image zoom effect */
+.img-zoom-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.img-zoom-container img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-luxury:hover .img-zoom-container img {
+  transform: scale(1.05);
+}
+
+/* Modal Overlay Responsive */
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+@media (max-width: 575.98px) {
+  .custom-modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-start;
+  }
+}
