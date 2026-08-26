@@ -10,6 +10,7 @@ import { FurnitureItem } from '../../core/models/furniture.model';
 import { LicenseBadgeComponent } from '../../shared/components/license-badge/license-badge.component';
 import { ProjectModalComponent } from '../../shared/components/project-modal/project-modal.component';
 import { FurnitureModalComponent } from '../../shared/components/furniture-modal/furniture-modal.component';
+import { VideoShowcaseComponent } from '../../shared/components/video-showcase/video-showcase.component';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ import { FurnitureModalComponent } from '../../shared/components/furniture-modal
     RouterLink, 
     LicenseBadgeComponent, 
     ProjectModalComponent, 
-    FurnitureModalComponent
+    FurnitureModalComponent,
+    VideoShowcaseComponent
   ],
   template: `
     <!-- Hero Section -->
@@ -200,8 +202,15 @@ import { FurnitureModalComponent } from '../../shared/components/furniture-modal
       </div>
     </section>
 
-    <!-- Custom Furniture Highlight -->
+    <!-- Video Reels & Walkthroughs Section -->
     <section class="py-4 py-md-5">
+      <div class="container">
+        <app-video-showcase></app-video-showcase>
+      </div>
+    </section>
+
+    <!-- Custom Furniture Highlight -->
+    <section class="py-4 py-md-5 bg-surface-glass border-top border-bottom border-secondary border-opacity-25">
       <div class="container">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
           <div>
@@ -249,7 +258,7 @@ import { FurnitureModalComponent } from '../../shared/components/furniture-modal
     </section>
 
     <!-- Step-by-Step Turnkey Process -->
-    <section class="py-4 py-md-5 bg-surface-glass border-top border-bottom border-secondary border-opacity-25">
+    <section class="py-4 py-md-5">
       <div class="container">
         <div class="text-center max-w-700 mx-auto mb-4 mb-md-5">
           <span class="badge gradient-badge px-3 py-1 text-uppercase mb-2">{{ t.isAmharic() ? 'አሰራራችን' : 'How We Work' }}</span>

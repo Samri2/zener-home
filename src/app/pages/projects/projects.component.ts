@@ -4,11 +4,12 @@ import { TranslationService } from '../../core/services/translation.service';
 import { ProjectService } from '../../core/services/project.service';
 import { Project } from '../../core/models/project.model';
 import { ProjectModalComponent } from '../../shared/components/project-modal/project-modal.component';
+import { VideoShowcaseComponent } from '../../shared/components/video-showcase/video-showcase.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, ProjectModalComponent],
+  imports: [CommonModule, ProjectModalComponent, VideoShowcaseComponent],
   template: `
     <!-- Header -->
     <div class="page-header py-4 py-md-5 bg-surface-glass border-bottom border-secondary border-opacity-25 mb-4 mb-md-5">
@@ -108,6 +109,11 @@ import { ProjectModalComponent } from '../../shared/components/project-modal/pro
             </div>
           </div>
         }
+      </div>
+
+      <!-- Embedded Video Walkthroughs -->
+      <div class="mb-5">
+        <app-video-showcase></app-video-showcase>
       </div>
 
       <!-- Turnkey CTA -->

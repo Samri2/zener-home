@@ -25,6 +25,24 @@ export class FurnitureService {
       leadTime: '10 - 15 business days'
     },
     {
+      id: 'wpc-louvre-acoustic-wall',
+      name: 'WPC Acoustic Slat & Floating Display Unit',
+      nameAm: 'ደብሊውፒሲ የእንጨት ግድግዳ እና የቲቪ ጌጥ',
+      category: 'living',
+      categoryLabel: 'Living & Acoustic Wall',
+      categoryLabelAm: 'የሳሎን ግድግዳ ስራ',
+      dimensions: '280cm (W) x 260cm (H) x 35cm (D)',
+      woodType: 'Waterproof WPC Composite & Matte Lacquer MDF',
+      finish: 'Natural Woodgrain Texture & 3000K Warm LED Channels',
+      priceNote: 'Custom tailored with matching display shelving.',
+      priceNoteAm: 'ከተስማሚ መደርደሪያዎች ጋር የሚዘጋጅ።',
+      description: 'Moisture-proof WPC vertical louvre panels paired with minimalist floating consoles, providing an ultra-modern acoustic and visual centerpiece for luxury villas.',
+      descriptionAm: 'የውሃ እና የእርጥበት መከላከያ ያለው የደብሊውፒሲ የእንጨት ግድግዳ ከዘመናዊ የቲቪ ካቢኔት ጋር።',
+      image: '/images/pages/page-14.jpg',
+      featured: true,
+      leadTime: '8 - 12 business days'
+    },
+    {
       id: 'luxury-master-bedroom-suite',
       name: 'Elysian King Bedframe & Fluted Headboard',
       nameAm: 'ኤሊሲያን የቅንጦት ባለከፍተኛ መኝታ አልጋ',
@@ -41,6 +59,24 @@ export class FurnitureService {
       image: '/images/pages/page-04.jpg',
       featured: true,
       leadTime: '14 - 20 business days'
+    },
+    {
+      id: 'modern-sliding-wardrobe',
+      name: 'Floor-to-Ceiling Tinted Glass Sliding Wardrobe',
+      nameAm: 'ዘመናዊ የመስታወት ተንሸራታች የልብስ ቁምሳጥን',
+      category: 'bedroom',
+      categoryLabel: 'Wardrobe Systems',
+      categoryLabelAm: 'የልብስ ቁምሳጥን',
+      dimensions: '300cm (W) x 270cm (H) x 65cm (D)',
+      woodType: 'High-Density Melamine Core & Smoked Aluminum Framed Glass',
+      finish: 'Anti-Fingerprint Finish & Motion-Sensor Internal LED Lighting',
+      priceNote: 'Custom configured with custom drawers and accessory trays.',
+      priceNoteAm: 'እንደ ፍላጎትዎ መሳቢያዎችና መደርደሪያዎች ያሉት።',
+      description: 'Architectural wardrobe with smoked tempered glass doors, automated interior sensor lights, velvet-lined jewelry drawers, and heavy-duty sliding track mechanisms.',
+      descriptionAm: 'ዘመናዊ የጭስ መስታወት ተንሸራታች በር ያለው የልብስ ቁምሳጥን ከውስጥ ሴንሰር መብራቶችና መሳቢያዎች ጋር።',
+      image: '/images/pages/page-05.jpg',
+      featured: false,
+      leadTime: '15 - 22 business days'
     },
     {
       id: 'modern-island-kitchen-cabinetry',
