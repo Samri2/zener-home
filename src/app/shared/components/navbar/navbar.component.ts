@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslationService } from '../../../core/services/translation.service';
+import { ThemeService } from '../../../core/services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -29,6 +30,15 @@ import { TranslationService } from '../../../core/services/translation.service';
           <a href="tel:0922166213" class="text-white-50 text-decoration-none hover-orange d-none d-md-flex align-items-center gap-1">
             <i class="bi bi-telephone text-warning"></i> 0922 166 213
           </a>
+          
+          <!-- Theme Toggle Button -->
+          <button type="button" 
+                  class="theme-toggle-btn px-2 py-0 rounded border-0" 
+                  (click)="themeService.toggleTheme()" 
+                  [title]="themeService.currentTheme() === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+            <i class="bi" [ngClass]="themeService.currentTheme() === 'dark' ? 'bi-sun-fill text-warning' : 'bi-moon-stars-fill text-dark'"></i>
+          </button>
+
           <!-- Language Switcher -->
           <button type="button" class="lang-switch-btn px-2 py-0 rounded border-0" (click)="t.toggleLang()">
             <i class="bi bi-globe2 text-warning me-1"></i>
@@ -41,10 +51,10 @@ import { TranslationService } from '../../../core/services/translation.service';
     <!-- Main Navigation Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-glass sticky-top py-2 py-lg-3">
       <div class="container">
-        <!-- Logo / Brand -->
+        <!-- Logo / Brand (Page 2 PDF Logo) -->
         <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
-          <div class="brand-logo-icon d-flex align-items-center justify-content-center flex-shrink-0">
-            <i class="bi bi-house-gear-fill fs-4 text-warning"></i>
+          <div class="brand-logo-container d-flex align-items-center justify-content-center flex-shrink-0">
+            <img src="/images/logo.png" alt="Zener Home Logo" class="brand-logo-img">
           </div>
           <div>
             <div class="brand-title fw-extrabold letter-spacing-1">ZENER HOME</div>
@@ -59,7 +69,7 @@ import { TranslationService } from '../../../core/services/translation.service';
                 aria-controls="navbarNav" 
                 [attr.aria-expanded]="isMenuOpen()" 
                 aria-label="Toggle navigation">
-          <i class="bi" [ngClass]="isMenuOpen() ? 'bi-x-lg text-warning fs-3' : 'bi-list text-white fs-3'"></i>
+          <i class="bi" [ngClass]="isMenuOpen() ? 'bi-x-lg text-warning fs-3' : 'bi-list text-warning fs-3'"></i>
         </button>
 
         <!-- Nav Links -->
@@ -108,11 +118,32 @@ import { TranslationService } from '../../../core/services/translation.service';
   `,
   styles: [`
     .top-bar {
-      background: #09090C;
+      background: var(--bg-top-bar);
       font-size: 0.78rem;
     }
     .hover-orange:hover {
       color: var(--color-primary-light) !important;
+    }
+    .theme-toggle-btn {
+      background: rgba(232, 106, 23, 0.15);
+      color: #FFF;
+      font-size: 0.85rem;
+      border: 1px solid rgba(232, 106, 23, 0.3) !important;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 24px;
+    }
+    .theme-toggle-btn:hover {
+      background: var(--color-primary);
+      color: #FFF;
+    }
+    .theme-light .theme-toggle-btn {
+      background: #E2E8F0;
+      border-color: #CBD5E1 !important;
     }
     .lang-switch-btn {
       background: rgba(232, 106, 23, 0.15);
@@ -126,17 +157,23 @@ import { TranslationService } from '../../../core/services/translation.service';
       background: var(--color-primary);
       color: #FFF;
     }
-    .brand-logo-icon {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, rgba(232, 106, 23, 0.2), rgba(201, 84, 12, 0.1));
+    .brand-logo-container {
+      height: 44px;
+      background: #FFFFFF;
       border: 1px solid rgba(232, 106, 23, 0.4);
-      border-radius: 10px;
+      border-radius: 8px;
+      padding: 3px 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .brand-logo-img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
     }
     .brand-title {
       font-size: 1.15rem;
       font-weight: 800;
-      color: #FFF;
+      color: var(--color-text-main);
       line-height: 1.1;
       letter-spacing: 0.08em;
     }
@@ -147,7 +184,7 @@ import { TranslationService } from '../../../core/services/translation.service';
       font-weight: 600;
     }
     .nav-link {
-      color: #CBD5E1 !important;
+      color: var(--color-text-sub) !important;
       font-weight: 500;
       font-size: 0.92rem;
       transition: all 0.2s ease;
@@ -159,7 +196,7 @@ import { TranslationService } from '../../../core/services/translation.service';
     }
     @media (max-width: 991.98px) {
       .navbar-collapse {
-        background: rgba(18, 18, 24, 0.98);
+        background: var(--color-bg-card);
         border: 1px solid var(--color-border);
         border-radius: 12px;
         padding: 1rem;
@@ -173,6 +210,7 @@ import { TranslationService } from '../../../core/services/translation.service';
 })
 export class NavbarComponent {
   readonly t = inject(TranslationService);
+  readonly themeService = inject(ThemeService);
   readonly isMenuOpen = signal<boolean>(false);
 
   closeMenu(): void {

@@ -12,24 +12,24 @@ import { TranslationService } from '../../../core/services/translation.service';
       <div class="container">
         <div class="row g-4 mb-5">
           
-          <!-- Column 1: Brand Info -->
+          <!-- Column 1: Brand Info with PDF Logo -->
           <div class="col-lg-4 col-md-6 col-12">
             <div class="d-flex align-items-center gap-2 mb-3">
-              <div class="brand-logo-icon d-flex align-items-center justify-content-center flex-shrink-0">
-                <i class="bi bi-house-gear-fill fs-4 text-warning"></i>
+              <div class="brand-logo-container d-flex align-items-center justify-content-center flex-shrink-0">
+                <img src="/images/logo.png" alt="Zener Home Logo" class="brand-logo-img">
               </div>
               <div>
                 <h5 class="brand-title mb-0">ZENER HOME</h5>
                 <span class="brand-subtitle">{{ t.t('brand.legal') }}</span>
               </div>
             </div>
-            <p class="text-white-50 small mb-3">
+            <p class="text-light-sub small mb-3">
               {{ t.t('brand.positioning') }}
             </p>
-            <div class="p-3 rounded-3 bg-black bg-opacity-40 border border-secondary border-opacity-25 small mb-3">
+            <div class="p-3 rounded-3 footer-license-box border border-secondary border-opacity-25 small mb-3">
               <div class="d-flex align-items-center gap-2 text-warning mb-1">
                 <i class="bi bi-patch-check-fill"></i>
-                <strong class="text-white">{{ t.isAmharic() ? 'የተመዘገበ ህጋዊ ተቋራጭ' : 'Licensed Finishing Contractor' }}</strong>
+                <strong>{{ t.isAmharic() ? 'የተመዘገበ ህጋዊ ተቋራጭ' : 'Licensed Finishing Contractor' }}</strong>
               </div>
               <div class="text-white-50 small">
                 {{ t.isAmharic() ? 'ደረጃ: 51212 | የንግድ ፈቃድ: 2931566' : 'Category: 51212 | License: 2931566' }}
@@ -42,7 +42,7 @@ import { TranslationService } from '../../../core/services/translation.service';
 
           <!-- Column 2: Quick Links -->
           <div class="col-lg-2 col-md-6 col-6">
-            <h6 class="text-white fw-bold mb-3 text-uppercase letter-spacing-1">
+            <h6 class="footer-heading fw-bold mb-3 text-uppercase letter-spacing-1">
               {{ t.isAmharic() ? 'ገጾች' : 'Navigation' }}
             </h6>
             <ul class="list-unstyled d-grid gap-2 small">
@@ -58,10 +58,10 @@ import { TranslationService } from '../../../core/services/translation.service';
 
           <!-- Column 3: Finishing Services -->
           <div class="col-lg-3 col-md-6 col-6">
-            <h6 class="text-white fw-bold mb-3 text-uppercase letter-spacing-1">
+            <h6 class="footer-heading fw-bold mb-3 text-uppercase letter-spacing-1">
               {{ t.isAmharic() ? 'አገልግሎቶች' : 'Specializations' }}
             </h6>
-            <ul class="list-unstyled d-grid gap-2 small text-white-50">
+            <ul class="list-unstyled d-grid gap-2 small text-light-sub">
               <li><i class="bi bi-chevron-right text-warning me-1"></i>{{ t.isAmharic() ? 'የጂፕሰም ጣሪያ እና መብራት' : 'Gypsum & LED Lighting' }}</li>
               <li><i class="bi bi-chevron-right text-warning me-1"></i>{{ t.isAmharic() ? 'የሴራሚክ እና እብነበረድ ወለል' : 'Porcelain & Marble Tiling' }}</li>
               <li><i class="bi bi-chevron-right text-warning me-1"></i>{{ t.isAmharic() ? 'ዘመናዊ የወጥ ቤት ካቢኔቶች' : 'Luxury Kitchen Cabinetry' }}</li>
@@ -73,25 +73,25 @@ import { TranslationService } from '../../../core/services/translation.service';
 
           <!-- Column 4: Contact & Office -->
           <div class="col-lg-3 col-md-6 col-12">
-            <h6 class="text-white fw-bold mb-3 text-uppercase letter-spacing-1">
+            <h6 class="footer-heading fw-bold mb-3 text-uppercase letter-spacing-1">
               {{ t.isAmharic() ? 'አድራሻ እና ስልክ' : 'Head Office' }}
             </h6>
-            <ul class="list-unstyled d-grid gap-2 small text-white-50 mb-3">
+            <ul class="list-unstyled d-grid gap-2 small text-light-sub mb-3">
               <li class="d-flex align-items-start gap-2">
                 <i class="bi bi-geo-alt text-warning mt-1"></i>
                 <span>{{ t.t('contact.address') }}</span>
               </li>
               <li class="d-flex align-items-center gap-2">
                 <i class="bi bi-telephone text-warning"></i>
-                <a href="tel:0910900931" class="text-light text-decoration-none">0910 900 931</a>
+                <a href="tel:0910900931" class="text-decoration-none footer-link">0910 900 931</a>
               </li>
               <li class="d-flex align-items-center gap-2">
                 <i class="bi bi-telephone text-warning"></i>
-                <a href="tel:0922166213" class="text-light text-decoration-none">0922 166 213</a>
+                <a href="tel:0922166213" class="text-decoration-none footer-link">0922 166 213</a>
               </li>
               <li class="d-flex align-items-center gap-2">
                 <i class="bi bi-envelope text-warning"></i>
-                <a href="mailto:Zenerfinishingzf@gmail.com" class="text-light text-decoration-none text-break">Zenerfinishingzf&#64;gmail.com</a>
+                <a href="mailto:Zenerfinishingzf@gmail.com" class="text-decoration-none footer-link text-break">Zenerfinishingzf&#64;gmail.com</a>
               </li>
             </ul>
 
@@ -117,27 +117,42 @@ import { TranslationService } from '../../../core/services/translation.service';
   `,
   styles: [`
     .footer-wrapper {
-      background: #09090D;
+      background: var(--bg-footer);
     }
-    .brand-logo-icon {
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, rgba(232, 106, 23, 0.2), rgba(201, 84, 12, 0.1));
+    .brand-logo-container {
+      height: 44px;
+      background: #FFFFFF;
       border: 1px solid rgba(232, 106, 23, 0.4);
       border-radius: 8px;
+      padding: 3px 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .brand-logo-img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
     }
     .brand-title {
       font-size: 1.15rem;
       font-weight: 800;
-      color: #FFF;
+      color: var(--color-text-main);
       letter-spacing: 0.05em;
     }
     .brand-subtitle {
       font-size: 0.7rem;
       color: var(--color-primary-light);
     }
+    .footer-heading {
+      color: var(--color-text-main);
+    }
+    .footer-license-box {
+      background: rgba(0, 0, 0, 0.25);
+    }
+    .theme-light .footer-license-box {
+      background: rgba(255, 255, 255, 0.1);
+    }
     .footer-link {
-      color: #CBD5E1;
+      color: var(--color-text-sub);
       text-decoration: none;
       transition: all 0.2s ease;
     }
