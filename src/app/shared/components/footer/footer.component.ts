@@ -10,7 +10,7 @@ import { TranslationService } from '../../../core/services/translation.service';
   template: `
     <footer class="footer-wrapper pt-5 pb-4 border-top border-secondary border-opacity-25 mt-5">
       <div class="container">
-        <div class="row g-4 mb-5">
+        <div class="row g-4 mb-4">
           
           <!-- Column 1: Brand Info with PDF Logo -->
           <div class="col-lg-4 col-md-6 col-12">
@@ -71,10 +71,10 @@ import { TranslationService } from '../../../core/services/translation.service';
             </ul>
           </div>
 
-          <!-- Column 4: Contact & Office -->
+          <!-- Column 4: Contact & Socials -->
           <div class="col-lg-3 col-md-6 col-12">
             <h6 class="footer-heading fw-bold mb-3 text-uppercase letter-spacing-1">
-              {{ t.isAmharic() ? 'አድራሻ እና ስልክ' : 'Head Office' }}
+              {{ t.isAmharic() ? 'አድራሻ እና ማህበራዊ ሚዲያ' : 'Contact & Social Media' }}
             </h6>
             <ul class="list-unstyled d-grid gap-2 small text-light-sub mb-3">
               <li class="d-flex align-items-start gap-2">
@@ -83,10 +83,7 @@ import { TranslationService } from '../../../core/services/translation.service';
               </li>
               <li class="d-flex align-items-center gap-2">
                 <i class="bi bi-telephone text-warning"></i>
-                <a href="tel:0910900931" class="text-decoration-none footer-link">0910 900 931</a>
-              </li>
-              <li class="d-flex align-items-center gap-2">
-                <i class="bi bi-telephone text-warning"></i>
+                <a href="tel:0910900931" class="text-decoration-none footer-link">0910 900 931</a> / 
                 <a href="tel:0922166213" class="text-decoration-none footer-link">0922 166 213</a>
               </li>
               <li class="d-flex align-items-center gap-2">
@@ -95,10 +92,28 @@ import { TranslationService } from '../../../core/services/translation.service';
               </li>
             </ul>
 
-            <a href="https://wa.me/251910900931" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm w-100 py-2 d-inline-flex align-items-center justify-content-center gap-2">
-              <i class="bi bi-whatsapp"></i>
-              {{ t.t('btn.chatWhatsapp') }}
-            </a>
+            <!-- Social Media Icon Grid -->
+            <div class="mb-3">
+              <div class="text-white-50 small mb-2">{{ t.isAmharic() ? 'በማህበራዊ ሚዲያ ይከተሉን:' : 'Connect With Us:' }}</div>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://web.facebook.com/zenerfinishing" target="_blank" rel="noopener noreferrer" class="social-btn fb-btn" title="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/zener_interior_solution/" target="_blank" rel="noopener noreferrer" class="social-btn insta-btn" title="Instagram">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@zener_home" target="_blank" rel="noopener noreferrer" class="social-btn tiktok-btn" title="TikTok">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+                <a href="https://t.me/zenerhome" target="_blank" rel="noopener noreferrer" class="social-btn tg-btn" title="Telegram">
+                  <i class="bi bi-telegram"></i>
+                </a>
+                <a href="https://wa.me/251910900931" target="_blank" rel="noopener noreferrer" class="social-btn wa-btn" title="WhatsApp">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -160,6 +175,31 @@ import { TranslationService } from '../../../core/services/translation.service';
       color: var(--color-primary-light);
       padding-left: 4px;
     }
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .social-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      color: #FFF;
+    }
+    .fb-btn:hover { background: #1877F2; border-color: #1877F2; }
+    .insta-btn:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: transparent; }
+    .tiktok-btn:hover { background: #000000; border-color: #FE2C55; }
+    .tg-btn:hover { background: #229ED9; border-color: #229ED9; }
+    .wa-btn:hover { background: #25D366; border-color: #25D366; }
+
     .letter-spacing-1 {
       letter-spacing: 0.06em;
     }

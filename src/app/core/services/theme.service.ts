@@ -10,7 +10,6 @@ export class ThemeService {
   readonly currentTheme = signal<Theme>(this.getInitialTheme());
 
   constructor() {
-    // Apply theme on document when signal changes
     effect(() => {
       const theme = this.currentTheme();
       if (typeof document !== 'undefined') {
@@ -39,7 +38,7 @@ export class ThemeService {
         }
       } catch (e) {}
     }
-    return 'dark'; // Default to luxury dark theme
+    return 'dark';
   }
 
   toggleTheme(): void {

@@ -44,6 +44,7 @@ import { LicenseBadgeComponent } from '../../shared/components/license-badge/lic
                   <div>
                     <h6 class="text-white fw-bold mb-1">{{ t.isAmharic() ? 'ዋና ቢሮ አድራሻ' : 'Head Office Address' }}</h6>
                     <p class="text-light-sub small mb-0">{{ t.t('contact.address') }}</p>
+                    <small class="text-white-50">{{ t.isAmharic() ? 'ጀርመን አደባባይ / ገብርኤል ቤ/ክርስቲያን አካባቢ' : 'Near German Square / Gabriel Church' }}</small>
                   </div>
                 </div>
 
@@ -77,14 +78,24 @@ import { LicenseBadgeComponent } from '../../shared/components/license-badge/lic
                   </div>
                 </div>
 
-                <!-- Leadership -->
-                <div class="d-flex align-items-start gap-3">
-                  <div class="contact-icon-box d-flex align-items-center justify-content-center flex-shrink-0">
-                    <i class="bi bi-person-badge-fill text-warning fs-4"></i>
-                  </div>
-                  <div>
-                    <h6 class="text-white fw-bold mb-1">{{ t.isAmharic() ? 'ዋና ስራ አስኪያጅ' : 'General Management' }}</h6>
-                    <p class="text-light-sub small mb-0">{{ t.isAmharic() ? 'ፍቃዱ ወርቁ በለጠ (Fikadu Worku Belete)' : 'Fikadu Worku Belete' }}</p>
+                <!-- Social Channels Block -->
+                <div class="p-3 rounded-3 bg-black bg-opacity-30 border border-secondary border-opacity-25">
+                  <h6 class="text-white fw-bold mb-2 small">
+                    {{ t.isAmharic() ? 'በማህበራዊ ገጾቻችን ያግኙን' : 'Follow Our Works Online' }}
+                  </h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <a href="https://web.facebook.com/zenerfinishing" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light d-flex align-items-center gap-1">
+                      <i class="bi bi-facebook text-primary"></i> Facebook
+                    </a>
+                    <a href="https://www.instagram.com/zener_interior_solution/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light d-flex align-items-center gap-1">
+                      <i class="bi bi-instagram text-danger"></i> Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@zener_home" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light d-flex align-items-center gap-1">
+                      <i class="bi bi-tiktok"></i> TikTok
+                    </a>
+                    <a href="https://t.me/zenerhome" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light d-flex align-items-center gap-1">
+                      <i class="bi bi-telegram text-info"></i> Telegram
+                    </a>
                   </div>
                 </div>
 

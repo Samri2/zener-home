@@ -9,7 +9,7 @@ import { ThemeService } from '../../../core/services/theme.service';
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   template: `
-    <!-- Top Announcement Bar (Responsive) -->
+    <!-- Top Announcement Bar (Responsive with Social Icons) -->
     <div class="top-bar py-1 px-2 px-md-3 border-bottom border-secondary border-opacity-25 small text-white-50">
       <div class="container d-flex justify-content-between align-items-center gap-2">
         <div class="d-flex align-items-center gap-2">
@@ -18,9 +18,21 @@ import { ThemeService } from '../../../core/services/theme.service';
             <span class="d-none d-sm-inline">{{ t.isAmharic() ? 'ህጋዊ የፊኒሺንግ ተቋራጭ ደረጃ 51212' : 'Licensed Category 51212 Finishing Contractor' }}</span>
           </span>
           <span class="d-none d-lg-inline text-secondary">|</span>
-          <span class="d-none d-lg-flex align-items-center gap-1">
-            <i class="bi bi-geo-alt"></i> Lebu, Addis Ababa
-          </span>
+          <!-- Social Icons in Top Bar -->
+          <div class="d-none d-md-flex align-items-center gap-2 ms-2">
+            <a href="https://web.facebook.com/zenerfinishing" target="_blank" rel="noopener noreferrer" class="social-top-link" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/zener_interior_solution/" target="_blank" rel="noopener noreferrer" class="social-top-link" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@zener_home" target="_blank" rel="noopener noreferrer" class="social-top-link" title="TikTok">
+              <i class="bi bi-tiktok"></i>
+            </a>
+            <a href="https://t.me/zenerhome" target="_blank" rel="noopener noreferrer" class="social-top-link" title="Telegram">
+              <i class="bi bi-telegram"></i>
+            </a>
+          </div>
         </div>
 
         <div class="d-flex align-items-center gap-2 gap-sm-3">
@@ -123,6 +135,16 @@ import { ThemeService } from '../../../core/services/theme.service';
     }
     .hover-orange:hover {
       color: var(--color-primary-light) !important;
+    }
+    .social-top-link {
+      color: #CBD5E1;
+      font-size: 0.85rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+    .social-top-link:hover {
+      color: var(--color-primary-light);
+      transform: translateY(-1px);
     }
     .theme-toggle-btn {
       background: rgba(232, 106, 23, 0.15);
