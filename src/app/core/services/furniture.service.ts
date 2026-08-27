@@ -20,7 +20,7 @@ export class FurnitureService {
       priceNoteAm: 'እንደ ክፍሉ መጠን በልዩ ሁኔታ የሚሰራ።',
       description: 'Architectural living room media wall featuring vertical acoustic wood slats, concealed cable management channels, integrated floating drawers with Blum soft-close runners, and ambient backlit shelving.',
       descriptionAm: 'ለሳሎን የሚሆን ውብ የቲቪ ግድግዳ፤ ድምጽ የሚቀንሱ የእንጨት ዲዛይኖች፣ የተሰወሩ የሽቦ መስመሮች፣ ተንሳፋፊ መሳቢያዎች እና የውስጥ የኤልኢዲ መብራቶች ያሉት።',
-      image: '/images/pages/page-06.jpg',
+      image: '/images/media/photo-01.jpg',
       featured: true,
       leadTime: '10 - 15 business days'
     },
@@ -38,7 +38,7 @@ export class FurnitureService {
       priceNoteAm: 'ከተስማሚ መደርደሪያዎች ጋር የሚዘጋጅ።',
       description: 'Moisture-proof WPC vertical louvre panels paired with minimalist floating consoles, providing an ultra-modern acoustic and visual centerpiece for luxury villas.',
       descriptionAm: 'የውሃ እና የእርጥበት መከላከያ ያለው የደብሊውፒሲ የእንጨት ግድግዳ ከዘመናዊ የቲቪ ካቢኔት ጋር።',
-      image: '/images/pages/page-14.jpg',
+      image: '/images/media/photo-07.jpg',
       featured: true,
       leadTime: '8 - 12 business days'
     },
@@ -56,7 +56,7 @@ export class FurnitureService {
       priceNoteAm: 'አልጋውን፣ የግድግዳ ጌጡን እና ሁለት ተንሳፋፊ ኮሞዲኖዎችን ያካትታል።',
       description: 'Opulent king-size bed suite featuring an expansive floor-to-ceiling upholstered and timber fluted headboard, cantilevered bedside floating tables, and solid internal framing.',
       descriptionAm: 'የተሟላ የቅንጦት ኪንግ ሳይዝ አልጋ፤ ከጣሪያ እስከ ወለል የሚደርስ የእንጨትና የጨርቅ ጌጥ፣ ተንሳፋፊ ኮሞዲኖዎች እና ጠንካራ የእንጨት አሰራር።',
-      image: '/images/pages/page-04.jpg',
+      image: '/images/media/photo-28.jpg',
       featured: true,
       leadTime: '14 - 20 business days'
     },
@@ -74,8 +74,8 @@ export class FurnitureService {
       priceNoteAm: 'እንደ ፍላጎትዎ መሳቢያዎችና መደርደሪያዎች ያሉት።',
       description: 'Architectural wardrobe with smoked tempered glass doors, automated interior sensor lights, velvet-lined jewelry drawers, and heavy-duty sliding track mechanisms.',
       descriptionAm: 'ዘመናዊ የጭስ መስታወት ተንሸራታች በር ያለው የልብስ ቁምሳጥን ከውስጥ ሴንሰር መብራቶችና መሳቢያዎች ጋር።',
-      image: '/images/pages/page-05.jpg',
-      featured: false,
+      image: '/images/media/photo-30.jpg',
+      featured: true,
       leadTime: '15 - 22 business days'
     },
     {
@@ -92,7 +92,7 @@ export class FurnitureService {
       priceNoteAm: 'እንደ ርዝመቱ መጠን እና እንደ ተመረጠው እብነበረድ ዋጋ ይሰላል።',
       description: 'Engineered modular kitchen with quartz counters, lift-up upper cabinet doors, pull-out larders, and scratch-resistant matte facades tailored for luxury residences.',
       descriptionAm: 'የውሃና እርጥበት መከላከያ ያላቸው ጥራት ያላቸው የወጥ ቤት ካቢኔቶች፤ ኳርትዝ እብነበረድ፣ ዘመናዊ መሳቢያዎች እና የሚያማምሩ ቀለሞች።',
-      image: '/images/pages/page-07.jpg',
+      image: '/images/media/photo-55.jpg',
       featured: true,
       leadTime: '20 - 30 business days'
     },
@@ -110,7 +110,7 @@ export class FurnitureService {
       priceNoteAm: 'ለቢሮዎች እና ለንግድ ተቋማት የሚዘጋጅ።',
       description: 'Commanding executive reception workstation with built-in led illumination, wire grommets, internal shelving, and transaction tops.',
       descriptionAm: 'ለሆቴል፣ ስፓና ለኮርፖሬት ቢሮዎች የሚሆን ውብ የሪሴፕሽን ጠረጴዛ ከኤልኢዲ መብራት ጋር።',
-      image: '/images/pages/page-10.jpg',
+      image: '/images/media/photo-60.jpg',
       featured: true,
       leadTime: '12 - 18 business days'
     },
@@ -128,7 +128,7 @@ export class FurnitureService {
       priceNoteAm: 'ጠረጴዛውን፣ ተስማሚ ቤንች እና ወንበሮችን ያጠቃልላል።',
       description: 'Handcrafted solid hardwood dining centerpiece with organic natural wood grains and modern matching dining benches.',
       descriptionAm: 'ከተፈጥሮ ጠንካራ እንጨት የተሰራ የመመገቢያ ጠረጴዛ ከውብ መቀመጫ ቤንች ጋር።',
-      image: '/images/pages/page-02.jpg',
+      image: '/images/media/photo-66.jpg',
       featured: true,
       leadTime: '14 - 21 business days'
     },
@@ -146,7 +146,7 @@ export class FurnitureService {
       priceNoteAm: 'እንደ ጣሪያው ስፋት መጠን በልዩ ሁኔታ የሚሰራ።',
       description: 'Precision CNC-routed geometric architectural ceiling insets that provide dazzling indirect ambient illumination for luxury living and reception halls.',
       descriptionAm: 'በከፍተኛ የሌዘር ቴክኖሎጂ የተቀረጸ የጣሪያ ጌጥ፤ ለሳሎን እና ለቪላዎች ልዩ ውበት የሚሰጥ።',
-      image: '/images/pages/page-15.jpg',
+      image: '/images/media/photo-47.jpg',
       featured: true,
       leadTime: '10 - 15 business days'
     }
@@ -161,7 +161,7 @@ export class FurnitureService {
   }
 
   getFurnitureById(id: string): FurnitureItem | undefined {
-    return this.furnitureItems.find(f => f.id === id);
+    return this.furnitureItems.find(p => p.id === id);
   }
 
   getFurnitureByCategory(category: string): FurnitureItem[] {

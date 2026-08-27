@@ -5,7 +5,7 @@ export interface ServiceItem {
   shortDesc: string;
   shortDescAm: string;
   icon: string;
-  category: 'finishing' | 'furniture' | 'design';
+  category: string;
   details: string[];
   detailsAm: string[];
   image: string;

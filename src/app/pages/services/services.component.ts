@@ -4,15 +4,16 @@ import { RouterLink } from '@angular/router';
 import { TranslationService } from '../../core/services/translation.service';
 import { ServiceService } from '../../core/services/service.service';
 import { LicenseBadgeComponent } from '../../shared/components/license-badge/license-badge.component';
+import { VideoShowcaseComponent } from '../../shared/components/video-showcase/video-showcase.component';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, RouterLink, LicenseBadgeComponent],
+  imports: [CommonModule, RouterLink, LicenseBadgeComponent, VideoShowcaseComponent],
   template: `
     <!-- Page Header -->
-    <div class="page-header py-5 bg-surface-glass border-bottom border-secondary border-opacity-25 mb-5">
-      <div class="container text-center py-4">
+    <div class="page-header py-4 py-md-5 bg-surface-glass border-bottom border-secondary border-opacity-25 mb-4 mb-md-5">
+      <div class="container text-center py-3 py-md-4">
         <span class="badge gradient-badge px-3 py-1 text-uppercase mb-2">
           {{ t.isAmharic() ? 'የሙያ ዘርፎቻችን' : 'Comprehensive Capabilities' }}
         </span>
@@ -27,13 +28,13 @@ import { LicenseBadgeComponent } from '../../shared/components/license-badge/lic
 
     <div class="container pb-5">
       <!-- Section 1: Detailed Services Breakdown -->
-      <div class="d-grid gap-5 mb-5">
+      <div class="d-grid gap-4 gap-md-5 mb-5">
         @for (service of serviceService.getServices(); track service.id; let isEven = $even) {
-          <div class="card-luxury p-4 p-md-5">
-            <div class="row align-items-center g-5" [ngClass]="{'flex-md-row-reverse': !isEven}">
+          <div class="card-luxury p-3 p-sm-4 p-md-5">
+            <div class="row align-items-center g-4 g-lg-5" [ngClass]="{'flex-md-row-reverse': !isEven}">
               
               <!-- Service Info -->
-              <div class="col-lg-6">
+              <div class="col-12 col-lg-6">
                 <div class="d-inline-flex align-items-center gap-2 mb-3">
                   <div class="service-mini-icon d-flex align-items-center justify-content-center">
                     <i class="bi {{ service.icon }} text-warning fs-4"></i>
@@ -41,7 +42,7 @@ import { LicenseBadgeComponent } from '../../shared/components/license-badge/lic
                   <span class="badge gradient-badge text-uppercase">{{ service.category }}</span>
                 </div>
 
-                <h2 class="text-white fw-bold mb-3">
+                <h2 class="text-white fw-bold mb-3 fs-4 fs-md-3">
                   {{ t.isAmharic() ? service.titleAm : service.title }}
                 </h2>
 
@@ -74,15 +75,20 @@ import { LicenseBadgeComponent } from '../../shared/components/license-badge/lic
               </div>
 
               <!-- Service Image -->
-              <div class="col-lg-6">
+              <div class="col-12 col-lg-6">
                 <div class="service-img-wrapper rounded-3 overflow-hidden">
-                  <img [src]="service.image" [alt]="service.title" class="img-fluid w-100 object-fit-cover">
+                  <img [src]="service.image" [alt]="service.title" class="img-fluid w-100 object-fit-cover service-img">
                 </div>
               </div>
 
             </div>
           </div>
         }
+      </div>
+
+      <!-- On-Site Video Walkthroughs Section -->
+      <div class="mb-5">
+        <app-video-showcase></app-video-showcase>
       </div>
 
       <!-- Trust Badge -->
@@ -93,7 +99,7 @@ import { LicenseBadgeComponent } from '../../shared/components/license-badge/lic
       <!-- Turnkey Warranty Card -->
       <div class="card-luxury p-4 p-md-5">
         <div class="row align-items-center g-4">
-          <div class="col-md-8">
+          <div class="col-12 col-md-8">
             <h3 class="text-white fw-bold mb-2">
               {{ t.isAmharic() ? 'የጥራት እና የጊዜ ዋስትና' : 'Guaranteed Craftsmanship & Fixed Pricing' }}
             </h3>
@@ -103,7 +109,7 @@ import { LicenseBadgeComponent } from '../../shared/components/license-badge/lic
                   : 'We operate strictly under signed engineering contracts, milestones transparency, and post-handover warranty support for all finishing and custom furniture.' }}
             </p>
           </div>
-          <div class="col-md-4 text-md-end">
+          <div class="col-12 col-md-4 text-start text-md-end">
             <a href="https://wa.me/251910900931" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp px-4 py-3">
               <i class="bi bi-whatsapp me-2"></i>
               {{ t.isAmharic() ? 'በዋትስአፕ ያነጋግሩን' : 'Chat with Engineer' }}
@@ -129,8 +135,9 @@ import { LicenseBadgeComponent } from '../../shared/components/license-badge/lic
       max-height: 400px;
       box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     }
-    .service-img-wrapper img {
+    .service-img {
       max-height: 400px;
+      height: 320px;
       object-fit: cover;
     }
     .text-light-sub {
