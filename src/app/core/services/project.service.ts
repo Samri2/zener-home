@@ -6,7 +6,7 @@ import { Project } from '../models/project.model';
 })
 export class ProjectService {
   private projects: Project[] = [
-    // --- Real Telegram Project Sites with On-Site Videos ---
+    // --- Real Telegram Project Sites ---
     {
       id: 'site-08-flagship-villa-estate',
       title: 'Project Site 8 - Flagship Modern Villa Complex',
@@ -23,7 +23,6 @@ export class ProjectService {
       descriptionAm: 'ባለ 9 ፎቶ የተሟላ የቪላ ፊኒሺንግ ፕሮጀክት፤ የጂፕሰም ጣሪያ፣ የእንጨት ግድግዳዎች፣ ዘመናዊ ኩሽና፣ የተመረጡ በሮች እና የቴራስ ፐርጎላ።',
       featured: true,
       image: '/images/projects/site-08/photo-01.jpg',
-      video: '/videos/site-video-05.mp4',
       gallery: [
         '/images/projects/site-08/photo-01.jpg',
         '/images/projects/site-08/photo-02.jpg',
@@ -64,7 +63,6 @@ export class ProjectService {
       descriptionAm: 'ለኢቢሲ የተሰራ ሰፊ የሎቢና የአትሪየም ፊኒሺንግ ስራ፤ ዘመናዊ መብራቶች፣ የኮርፖሬት ሪሴፕሽን እና የሚያማምሩ የእንጨት ስራዎች።',
       featured: true,
       image: '/images/projects/ebc/photo-01.jpg',
-      video: '/videos/site-video-06.mp4',
       gallery: [
         '/images/projects/ebc/photo-01.jpg',
         '/images/projects/ebc/photo-02.jpg',
@@ -100,7 +98,6 @@ export class ProjectService {
       descriptionAm: 'ለቪላ የተሰራ ከፍተኛ ጥራት ያለው የውስጥ ፊኒሺንግ፤ ባለብዙ ደረጃ የጂፕሰም ጣሪያዎች፣ የሞቀ ኤልኢዲ መብራቶች፣ የእንጨት በሮች እና የጸዳ የቀለም ፊኒሺንግ።',
       featured: true,
       image: '/images/projects/site-01/photo-01.jpg',
-      video: '/videos/site-video-01.mp4',
       gallery: [
         '/images/projects/site-01/photo-01.jpg',
         '/images/projects/site-01/photo-02.jpg',
@@ -137,7 +134,6 @@ export class ProjectService {
       descriptionAm: 'የሳሎን ቲቪ ግድግዳ የእንጨት ስራ፣ ትላልቅ የሚያብረቀርቁ የፖርሲሊን ወለሎች፣ ዘመናዊ የጣሪያ መብራቶች እና የመኝታ ክፍል ፊኒሺንግ።',
       featured: true,
       image: '/images/projects/site-02/photo-01.jpg',
-      video: '/videos/site-video-02.mp4',
       gallery: [
         '/images/projects/site-02/photo-01.jpg',
         '/images/projects/site-02/photo-02.jpg',
@@ -174,12 +170,11 @@ export class ProjectService {
       descriptionAm: 'የተሟላ ባለ ሁለት ፎቅ ቪላ ፊኒሺንግ፤ የመስታወት ደረጃ መከላከያዎች፣ ዘመናዊ ክፍት የወጥ ቤት ካቢኔቶች እና ውብ የሳሎን ጣሪያ።',
       featured: true,
       image: '/images/projects/site-03/photo-01.jpg',
-      video: '/videos/site-video-03.mp4',
       gallery: [
         '/images/projects/site-03/photo-01.jpg',
         '/images/projects/site-03/photo-02.jpg',
-        '/images/projects/site-03/photo-03.jpg',
-        '/images/projects/site-03/photo-04.jpg'
+        '/images/projects/site-03/photo-04.jpg',
+        '/images/projects/site-03/photo-03.jpg'
       ],
       features: [
         'Frameless 12mm tempered safety glass staircase balustrades',
@@ -210,7 +205,6 @@ export class ProjectService {
       descriptionAm: 'ባለብዙ ፎቅ ዘመናዊ ቪላ፤ የውጪ ግድግዳ ፊኒሺንግ፣ ዘመናዊ መግነጢሳዊ የጣሪያ መብራቶች እና የተሟሉ የእንጨት ካቢኔቶች።',
       featured: true,
       image: '/images/projects/site-06/photo-01.jpg',
-      video: '/videos/site-video-04.mp4',
       gallery: [
         '/images/projects/site-06/photo-01.jpg',
         '/images/projects/site-06/photo-02.jpg',

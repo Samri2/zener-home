@@ -183,13 +183,6 @@ import { VideoShowcaseComponent } from '../../shared/components/video-showcase/v
                       {{ t.isAmharic() ? project.categoryLabelAm : project.categoryLabel }}
                     </span>
                   </div>
-                  @if (project.video) {
-                    <div class="position-absolute top-0 end-0 m-3">
-                      <span class="badge bg-danger text-white">
-                        <i class="bi bi-play-circle-fill me-1"></i> Video
-                      </span>
-                    </div>
-                  }
                 </div>
                 <div class="p-3 p-md-4">
                   <div class="text-warning small mb-1 d-flex align-items-center gap-1">
