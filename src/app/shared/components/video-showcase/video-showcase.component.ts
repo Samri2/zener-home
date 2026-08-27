@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../../core/services/translation.service';
 
@@ -11,6 +11,7 @@ export interface VideoItem {
   location: string;
   thumbnail: string;
   duration: string;
+  videoSrc: string;
   fbVideoUrl: string;
   description: string;
   descriptionAm: string;
@@ -48,7 +49,7 @@ export interface VideoItem {
             <div class="card-luxury h-100 overflow-hidden d-flex flex-column justify-content-between">
               
               <!-- Video Preview / Thumbnail with Play Button -->
-              <div class="position-relative video-thumbnail-container overflow-hidden">
+              <div class="position-relative video-thumbnail-container overflow-hidden cursor-pointer" (click)="activeVideo.set(video)">
                 <img [src]="video.thumbnail" [alt]="video.title" class="img-fluid w-100 video-thumb-img object-fit-cover">
                 
                 <!-- Dark Gradient Overlay -->
@@ -63,9 +64,9 @@ export interface VideoItem {
                   </div>
 
                   <!-- Central Play Button Trigger -->
-                  <a [href]="video.fbVideoUrl" target="_blank" rel="noopener noreferrer" class="play-btn-circle mx-auto d-flex align-items-center justify-content-center text-decoration-none">
+                  <button type="button" class="play-btn-circle mx-auto d-flex align-items-center justify-content-center border-0 shadow" aria-label="Play video">
                     <i class="bi bi-play-fill text-white fs-1 ms-1"></i>
-                  </a>
+                  </button>
 
                   <div class="small text-white text-shadow-sm d-flex align-items-center gap-1">
                     <i class="bi bi-geo-alt-fill text-warning"></i> {{ video.location }}
@@ -84,10 +85,13 @@ export interface VideoItem {
                   </p>
                 </div>
 
-                <div class="pt-2 border-top border-secondary border-opacity-25">
-                  <a [href]="video.fbVideoUrl" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light w-100 d-flex align-items-center justify-content-center gap-2">
-                    <i class="bi bi-play-circle text-warning"></i>
-                    <span>{{ t.isAmharic() ? 'ቪዲዮውን በፌስቡክ ክፈት' : 'Watch Walkthrough Video' }}</span>
+                <div class="pt-2 border-top border-secondary border-opacity-25 d-flex gap-2">
+                  <button type="button" class="btn btn-sm btn-primary-orange flex-grow-1 d-flex align-items-center justify-content-center gap-1" (click)="activeVideo.set(video)">
+                    <i class="bi bi-play-circle"></i>
+                    <span>{{ t.isAmharic() ? 'ቪዲዮውን ይመልከቱ' : 'Watch Video' }}</span>
+                  </button>
+                  <a [href]="video.fbVideoUrl" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center" title="Facebook Reel">
+                    <i class="bi bi-facebook"></i>
                   </a>
                 </div>
               </div>
@@ -96,6 +100,36 @@ export interface VideoItem {
           </div>
         }
       </div>
+
+      <!-- Video Player Modal -->
+      @if (activeVideo()) {
+        <div class="custom-modal-overlay" (click)="activeVideo.set(null)">
+          <div class="modal-dialog-custom card-luxury p-3 p-md-4 overflow-hidden" (click)="$event.stopPropagation()">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="text-white fw-bold mb-0">
+                {{ t.isAmharic() ? activeVideo()?.titleAm : activeVideo()?.title }}
+              </h5>
+              <button type="button" class="btn-close-custom" (click)="activeVideo.set(null)">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+
+            <!-- Video Player -->
+            <div class="video-player-container rounded-3 overflow-hidden bg-black mb-3">
+              <video [src]="activeVideo()?.videoSrc" controls autoplay class="w-100 h-100"></video>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-warning small">
+                <i class="bi bi-geo-alt-fill me-1"></i>{{ activeVideo()?.location }}
+              </span>
+              <a [href]="activeVideo()?.fbVideoUrl" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-orange">
+                <i class="bi bi-facebook me-1"></i> Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+      }
     </div>
   `,
   styles: [`
@@ -107,6 +141,9 @@ export interface VideoItem {
       height: 230px;
       object-fit: cover;
       transition: transform 0.4s ease;
+    }
+    .cursor-pointer {
+      cursor: pointer;
     }
     .card-luxury:hover .video-thumb-img {
       transform: scale(1.06);
@@ -127,6 +164,29 @@ export interface VideoItem {
       transform: scale(1.15);
       box-shadow: 0 0 35px rgba(232, 106, 23, 0.9);
     }
+    .modal-dialog-custom {
+      max-width: 800px;
+      width: 100%;
+    }
+    .video-player-container {
+      max-height: 460px;
+    }
+    .video-player-container video {
+      max-height: 460px;
+      object-fit: contain;
+    }
+    .btn-close-custom {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFF;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
     .text-light-sub {
       color: #CBD5E1;
     }
@@ -137,6 +197,7 @@ export interface VideoItem {
 })
 export class VideoShowcaseComponent {
   readonly t = inject(TranslationService);
+  readonly activeVideo = signal<VideoItem | null>(null);
 
   readonly videos: VideoItem[] = [
     {
@@ -146,8 +207,9 @@ export class VideoShowcaseComponent {
       category: 'Living & Woodwork',
       categoryAm: 'የሳሎን እና የእንጨት ስራ',
       location: 'Bole Bulbula Site',
-      thumbnail: '/images/pages/page-06.jpg',
+      thumbnail: '/images/projects/site-01/photo-01.jpg',
       duration: 'Reel / 0:58',
+      videoSrc: '/videos/site-video-01.mp4',
       fbVideoUrl: 'https://web.facebook.com/zenerfinishing',
       description: 'Step-by-step assembly of fluted timber panels, LED channels, and cantilevered floating TV drawers.',
       descriptionAm: 'የእንጨት ፓነሎች፣ የኤልኢዲ መብራቶችና ተንሳፋፊ መሳቢያዎች አገጣጠም ሂደት።'
@@ -158,9 +220,10 @@ export class VideoShowcaseComponent {
       titleAm: 'የጂፕሰም ጣሪያ እና ዘመናዊ መግነጢሳዊ መብራቶች',
       category: 'Gypsum & Electrical',
       categoryAm: 'የጂፕሰም እና ኤሌክትሪክ ስራ',
-      location: 'Addis Ababa Residential Villa',
-      thumbnail: '/images/pages/page-14.jpg',
+      location: 'Project Site 8 Villa',
+      thumbnail: '/images/projects/site-08/photo-01.jpg',
       duration: 'Video / 1:45',
+      videoSrc: '/videos/site-video-02.mp4',
       fbVideoUrl: 'https://web.facebook.com/zenerfinishing',
       description: 'On-site gypsum ceiling craftsmanship with seamless cove channels and modern magnetic track lighting.',
       descriptionAm: 'የጂፕሰም ጣሪያ አሰራር እና ዘመናዊ የትራክ መብራቶች ዝርጋታ።'
@@ -171,13 +234,13 @@ export class VideoShowcaseComponent {
       titleAm: 'የተሟላ ዘመናዊ የወጥ ቤት ካቢኔት ርክክብ',
       category: 'Custom Kitchen',
       categoryAm: 'የወጥ ቤት ስራ',
-      location: 'Bulbula Mazoria Villa',
-      thumbnail: '/images/pages/page-07.jpg',
+      location: 'Project Site 3 Duplex',
+      thumbnail: '/images/projects/site-03/photo-01.jpg',
       duration: 'Reel / 1:12',
+      videoSrc: '/videos/site-video-03.mp4',
       fbVideoUrl: 'https://web.facebook.com/zenerfinishing',
       description: 'Completed kitchen walkthrough showcasing quartz worktops, soft-close hardware, and ambient undertank lighting.',
       descriptionAm: 'የኳርትዝ ድንጋይ፣ የጀርመን መገጣጠሚያዎችና የሚያማምሩ ካቢኔቶች የተሟላ ርክክብ።'
     }
   ];
 }
-

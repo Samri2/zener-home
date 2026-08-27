@@ -7,113 +7,335 @@ import { Project } from '../models/project.model';
 export class ProjectService {
   private projects: Project[] = [
     {
-      id: 'bulbula-mazoria-villa',
-      title: 'Bulbula Mazoria Site Residential Villa',
-      titleAm: 'ቡልቡላ ማዞሪያ የመኖሪያ ቪላ',
+      id: 'site-01-residential-villa',
+      title: 'Project Site 1 - Luxury Residential Villa Finishing',
+      titleAm: 'ፕሮጀክት ሳይት 1 - የቅንጦት ቪላ የተሟላ ፊኒሺንግ',
       category: 'residential',
       categoryLabel: 'Residential Villa',
       categoryLabelAm: 'የመኖሪያ ቪላ',
-      location: 'Bulbula Mazoria, Addis Ababa',
-      locationAm: 'ቡልቡላ ማዞሪያ፣ አዲስ አበባ',
-      scope: 'Turnkey Architectural Finishing, Custom Pergola Terrace, Luxury Living Room & Lighting',
-      scopeAm: 'ሙሉ የውስጥና ውጪ ፊኒሺንግ፣ የቴራስ ፐርጎላ፣ የሳሎን ጌጥና መብራት',
+      location: 'Addis Ababa',
+      locationAm: 'አዲስ አበባ',
+      scope: 'Turnkey Architectural Gypsum Ceilings, Electrical Cove Lights, Modern Doors & Wall Finishes',
+      scopeAm: 'የተሟላ የጂፕሰም ጣሪያ፣ የኤሌክትሪክ መብራቶች፣ ዘመናዊ በሮች እና የቀለም ስራ',
       year: '2024-2025',
-      description: 'A multi-story contemporary luxury villa featuring high-ceiling gypsum craftsmanship, architectural LED cove illumination, modern terrace pergola seating, and premium wood/stone accents.',
-      descriptionAm: 'ዘመናዊ ባለ ብዙ ፎቅ ቪላ፤ የጂፕሰም ቦርድ ጣሪያ ስራዎች፣ የኤልኢዲ መብራት ዲዛይን፣ የሚያምር የቴራስ ፐርጎላ እና ጥራት ያላቸው የድንጋይና የእንጨት ጌጦች ያሉት።',
+      description: 'Comprehensive high-end residential interior finishing showcasing multi-tier gypsum false ceilings, concealed 3000K warm LED channels, custom interior woodwork, and smooth level-5 wall plastering.',
+      descriptionAm: 'ለቪላ የተሰራ ከፍተኛ ጥራት ያለው የውስጥ ፊኒሺንግ፤ ባለብዙ ደረጃ የጂፕሰም ጣሪያዎች፣ የሞቀ ኤልኢዲ መብራቶች፣ የእንጨት በሮች እና የጸዳ የቀለም ፊኒሺንግ።',
       featured: true,
-      image: '/images/pages/page-06.jpg',
+      image: '/images/projects/site-01/photo-01.jpg',
       gallery: [
-        '/images/pages/page-06.jpg',
-        '/images/pages/page-07.jpg',
-        '/images/pages/page-01.jpg'
+        '/images/projects/site-01/photo-01.jpg',
+        '/images/projects/site-01/photo-02.jpg',
+        '/images/projects/site-01/photo-03.jpg',
+        '/images/projects/site-01/photo-04.jpg',
+        '/images/projects/site-01/photo-05.jpg'
       ],
       features: [
-        'Multi-tiered false ceiling with ambient warm lighting',
-        'Custom outdoor terrace pergola with composite timber slats',
-        'Open-concept designer kitchen with quartz countertops',
-        'Luxury porcelain flooring and architectural acoustic wall paneling'
+        'Multi-tiered geometric gypsum coffered false ceilings',
+        'Concealed perimeter LED cove illumination with smart switches',
+        'Solid engineered hardwood internal door installations',
+        'Flawless level-5 smooth wall skimming and durable acrylic paint'
       ],
       featuresAm: [
-        'ባለብዙ ደረጃ የጂፕሰም ጣሪያ ከዘመናዊ መብራቶች ጋር',
-        'የቴራስ ፐርጎላ እና የውጪ ማረፊያ ቦታ',
-        'ዘመናዊ ክፍት የወጥ ቤት ዲዛይን ከኳርትዝ ካቢኔቶች ጋር',
-        'የፖርሲሊን ወለል ንጣፍ እና የግድግዳ አኮስቲክ ፓነሎች'
+        'ባለብዙ ደረጃ ቅርፅ ያላቸው የጂፕሰም ጣሪያዎች',
+        'የተሰወሩ የኤልኢዲ መብራቶች ከዘመናዊ ማብሪያዎች ጋር',
+        'ጥራት ያላቸው የእንጨት በሮች ገጠማ',
+        'ልስላሴ ያለው የደረጃ 5 ግድግዳ ቀለም ፊኒሽ'
       ]
     },
     {
-      id: 'bole-bulbula-residential',
-      title: 'Bole BulBula Residential',
-      titleAm: 'ቦሌ ቡልቡላ የመኖሪያ ህንፃ',
+      id: 'site-02-contemporary-residence',
+      title: 'Project Site 2 - Contemporary Villa Interior Transformation',
+      titleAm: 'ፕሮጀክት ሳይት 2 - ዘመናዊ ቪላ የውስጥ ዲዛይን እና ፊኒሺንግ',
       category: 'residential',
-      categoryLabel: 'Luxury Residential',
-      categoryLabelAm: 'ዘመናዊ መኖሪያ ቤት',
-      location: 'Bole Bulbula, Addis Ababa',
-      locationAm: 'ቦሌ ቡልቡላ፣ አዲስ አበባ',
-      scope: 'Exterior Facade Cladding, Glass Balconies, Master Suite Finishing',
-      scopeAm: 'የውጪ ግድግዳ ማስዋብ፣ የመስታወት በረንዳዎች እና ዋና መኝታ ክፍል ፊኒሺንግ',
-      year: '2024',
-      description: 'Sophisticated residential build highlighting contrasting facade textures, modern steel/glass balcony railings, warm wooden ceilings, and turnkey interior electrical styling.',
-      descriptionAm: 'ዘመናዊ የውጪ እና የውስጥ ፊኒሺንግ፤ ልዩ የግድግዳ ቀለሞች፣ የመስታወት በረንዳዎች እና የተሟላ የኤሌክትሪክና የመብራት ዝርጋታ።',
-      featured: true,
-      image: '/images/pages/page-03.jpg',
-      gallery: [
-        '/images/pages/page-03.jpg'
-      ],
-      features: [
-        'Precision aluminum composite facade panels',
-        'Seamless glass and stainless steel safety railings',
-        'Integrated multi-zone ceiling spotlights'
-      ],
-      featuresAm: [
-        'የአሉሚኒየም እና የኮምፖሳይት የውጪ ግድግዳ ስራ',
-        'የመስታወት እና የብረት በረንዳዎች',
-        'የተቀናጁ የጣሪያ ስፖትላይት መብራቶች'
-      ]
-    },
-    {
-      id: 'chichinia-residential',
-      title: 'Chichinia Area Residential',
-      titleAm: 'ቺቺኒያ አካባቢ የመኖሪያ ቪላ',
-      category: 'residential',
-      categoryLabel: 'Modern Villa',
+      categoryLabel: 'Modern Residence',
       categoryLabelAm: 'ዘመናዊ ቪላ',
-      location: 'Chichinia, Addis Ababa',
-      locationAm: 'ቺቺኒያ፣ አዲስ አበባ',
-      scope: 'Structural Finishing, Modern Master Bedroom Suite, Double Height Chandelier Ceiling',
-      scopeAm: 'የግንባታ ፊኒሺንግ፣ የዋና መኝታ ክፍል እና የሻንደሊየር ጣሪያ ስራ',
-      year: '2023-2024',
-      description: 'High-end residential finishing featuring double-height ceiling voids with statement crystal chandeliers, custom fluted headboard accent walls, and built-in closet cabinetry.',
-      descriptionAm: 'ከፍተኛ ደረጃ ያለው የመኖሪያ ቤት ፊኒሺንግ፤ ባለ ሁለት ፎቅ ከፍታ ያለው የሳሎን ጣሪያ ከክሪስታል ሻንደሊየር ጋር እና የተሟላ የመኝታ ክፍል ዲዛይን።',
+      location: 'Addis Ababa Corridor',
+      locationAm: 'አዲስ አበባ',
+      scope: 'Living Room TV Acoustic Wall, False Ceilings, Porcelain Tiling, Master Suites',
+      scopeAm: 'የሳሎን ቲቪ ግድግዳ፣ የጣሪያ ስራ፣ የሴራሚክ ንጣፍ እና ዋና መኝታ ቤት',
+      year: '2024',
+      description: 'Full interior finishing execution including vertical timber slat TV feature walls, polished large-format porcelain floor tiling, designer lighting schemes, and contemporary bedroom cabinetry.',
+      descriptionAm: 'የሳሎን ቲቪ ግድግዳ የእንጨት ስራ፣ ትላልቅ የሚያብረቀርቁ የፖርሲሊን ወለሎች፣ ዘመናዊ የጣሪያ መብራቶች እና የመኝታ ክፍል ፊኒሺንግ።',
       featured: true,
-      image: '/images/pages/page-04.jpg',
+      image: '/images/projects/site-02/photo-01.jpg',
       gallery: [
-        '/images/pages/page-04.jpg'
+        '/images/projects/site-02/photo-01.jpg',
+        '/images/projects/site-02/photo-02.jpg',
+        '/images/projects/site-02/photo-03.jpg',
+        '/images/projects/site-02/photo-04.jpg',
+        '/images/projects/site-02/photo-05.jpg'
       ],
       features: [
-        'Fluted timber master bedroom feature wall',
-        'Double-height foyer ceiling with recessed perimeter LED strip',
-        'Custom built-in sliding wardrobe system'
+        'Acoustic fluted timber TV media wall with floating console base',
+        'Laser-leveled 60x120cm polished porcelain floor tiling',
+        'Custom master bedroom built-in sliding wardrobe enclosures',
+        'Multi-circuit architectural downlighting arrangements'
       ],
       featuresAm: [
-        'የመኝታ ክፍል የእንጨት ዲዛይን ግድግዳ',
-        'ባለከፍተኛ ጣሪያ የኤልኢዲ መብራት ስራ',
-        'ዘመናዊ የተገጠመ የልብስ ቁምሳጥን'
+        'ድምጽ የሚቀንስ የቲቪ ግድግዳ የእንጨት ስራ ከተንሳፋፊ ካቢኔት ጋር',
+        'በሌዘር የተስተካከለ 60x120 ሳ.ሜ የፖርሲሊን ወለል ንጣፍ',
+        'የመኝታ ክፍል የተገጠመ ተንሸራታች የልብስ ቁምሳጥን',
+        'ዘመናዊ የጣሪያ ስፖትላይት መብራቶች'
       ]
     },
     {
-      id: 'menanda-hotel-bishoftu',
-      title: 'Menanda Hotel, Bishoftu (Debre Zeit)',
-      titleAm: 'መናንዳ ሆቴል፣ ቢሾፍቱ (ደብረ ዘይት)',
+      id: 'site-03-luxury-duplex',
+      title: 'Project Site 3 - Luxury Villa & Duplex Finishing',
+      titleAm: 'ፕሮጀክት ሳይት 3 - የቅንጦት ዱፕሌክስ ቪላ ፊኒሺንግ',
+      category: 'residential',
+      categoryLabel: 'Luxury Duplex Villa',
+      categoryLabelAm: 'ባለ ሁለት ፎቅ ቪላ',
+      location: 'Bole Bulbula Site',
+      locationAm: 'ቦሌ ቡልቡላ ሳይት',
+      scope: 'Staircase Cladding, Glass Balustrades, Gypsum Ceilings, Custom Kitchen',
+      scopeAm: 'የደረጃ ፊኒሺንግ፣ የመስታወት መከላከያዎች፣ የጣሪያ ስራ እና ኩሽና',
+      year: '2024-2025',
+      description: 'Sophisticated duplex residence featuring cantilevered timber floating stairs with tempered glass railings, open-concept kitchen cabinetry, and seamless indoor-outdoor living finishes.',
+      descriptionAm: 'የተሟላ ባለ ሁለት ፎቅ ቪላ ፊኒሺንግ፤ የመስታወት ደረጃ መከላከያዎች፣ ዘመናዊ ክፍት የወጥ ቤት ካቢኔቶች እና ውብ የሳሎን ጣሪያ።',
+      featured: true,
+      image: '/images/projects/site-03/photo-01.jpg',
+      gallery: [
+        '/images/projects/site-03/photo-01.jpg',
+        '/images/projects/site-03/photo-02.jpg',
+        '/images/projects/site-03/photo-03.jpg',
+        '/images/projects/site-03/photo-04.jpg'
+      ],
+      features: [
+        'Frameless 12mm tempered safety glass staircase balustrades',
+        'Solid hardwood step treads with embedded step riser LEDs',
+        'Integrated modular kitchen with quartz waterfall countertops',
+        'Seamless room-to-room threshold-free floor transitions'
+      ],
+      featuresAm: [
+        '12 ሚ.ሜ የጸና የመስታወት ደረጃ መከላከያ',
+        'ከስር የበራ መብራት ያላቸው የተፈጥሮ እንጨት ደረጃዎች',
+        'ዘመናዊ የወጥ ቤት ካቢኔት ከኳርትዝ እብነበረድ ጋር',
+        'ያለ መለያየት ወጥ የሆነ የክፍሎች የወለል ንጣፍ'
+      ]
+    },
+    {
+      id: 'site-06-grand-residence',
+      title: 'Project Site 6 - Grand Multi-Level Residence',
+      titleAm: 'ፕሮጀክት ሳይት 6 - ባለብዙ ፎቅ ታላቅ ቪላ ፊኒሺንግ',
+      category: 'residential',
+      categoryLabel: 'Grand Residence',
+      categoryLabelAm: 'ታላቅ የመኖሪያ ቪላ',
+      location: 'Lebu / Jema Area, Addis Ababa',
+      locationAm: 'ሌቡ / ጀማ አካባቢ፣ አዲስ አበባ',
+      scope: 'Exterior Facade Cladding, Balconies, Magnetic Track Lights, Living Room Millwork',
+      scopeAm: 'የውጪ ግድግዳ ማስዋብ፣ በረንዳዎች፣ መግነጢሳዊ መብራቶች እና የእንጨት ስራዎች',
+      year: '2024',
+      description: 'Modern multi-story private residence boasting architectural exterior facade treatments, magnetic track lighting grids, and built-in millwork cabinetry throughout.',
+      descriptionAm: 'ባለብዙ ፎቅ ዘመናዊ ቪላ፤ የውጪ ግድግዳ ፊኒሺንግ፣ ዘመናዊ መግነጢሳዊ የጣሪያ መብራቶች እና የተሟሉ የእንጨት ካቢኔቶች።',
+      featured: true,
+      image: '/images/projects/site-06/photo-01.jpg',
+      gallery: [
+        '/images/projects/site-06/photo-01.jpg',
+        '/images/projects/site-06/photo-02.jpg',
+        '/images/projects/site-06/photo-03.jpg',
+        '/images/projects/site-06/photo-04.jpg'
+      ],
+      features: [
+        'Architectural magnetic track rail lighting system',
+        'Heavy-duty aluminum window frames with thermal breaks',
+        'Integrated multi-zone living and dining false ceiling drops',
+        'Exterior weatherproof stone texture silicone coatings'
+      ],
+      featuresAm: [
+        'ዘመናዊ መግነጢሳዊ የጣሪያ መብራቶች ስርዓት',
+        'የአየርና የውሃ መከላከያ ያላቸው ጠንካራ የአሉሚኒየም መስኮቶች',
+        'የሳሎን እና የመመገቢያ ክፍል የጣሪያ ጌጦች',
+        'የአየር ሁኔታን የሚቋቋም የውጪ ድንጋይ ቀለም'
+      ]
+    },
+    {
+      id: 'site-07-executive-villa',
+      title: 'Project Site 7 - Executive Villa & Master Suite Finishing',
+      titleAm: 'ፕሮጀክት ሳይት 7 - የኤግዚክዩቲቭ ቪላ እና የመኝታ ክፍሎች ፊኒሺንግ',
+      category: 'residential',
+      categoryLabel: 'Executive Residence',
+      categoryLabelAm: 'የመኖሪያ ቪላ',
+      location: 'Addis Ababa Suburban Estate',
+      locationAm: 'አዲስ አበባ',
+      scope: 'Master Bedroom Fluted Wood Walls, Floating Vanities, Gypsum Profiles',
+      scopeAm: 'የመኝታ ክፍል የእንጨት ግድግዳ፣ ተንሳፋፊ ኮሞዲኖዎች እና የጣሪያ ስራ',
+      year: '2024-2025',
+      description: 'Refined executive finishing execution showcasing master bedroom custom vertical fluted wood accent walls, cantilevered floating nightstands, and spa-style bathroom vanities.',
+      descriptionAm: 'ለዋና መኝታ ክፍል የተሰራ ውብ የእንጨት ግድግዳ ዲዛይን፤ ተንሳፋፊ ኮሞዲኖዎች፣ የጣሪያ ጌጦች እና ዘመናዊ የመታጠቢያ ቤት ካቢኔቶች።',
+      featured: false,
+      image: '/images/projects/site-07/photo-01.jpg',
+      gallery: [
+        '/images/projects/site-07/photo-01.jpg',
+        '/images/projects/site-07/photo-02.jpg',
+        '/images/projects/site-07/photo-03.jpg',
+        '/images/projects/site-07/photo-04.jpg',
+        '/images/projects/site-07/photo-05.jpg',
+        '/images/projects/site-07/photo-06.jpg'
+      ],
+      features: [
+        'Floor-to-ceiling fluted wood master bedroom headboard wall',
+        'Cantilevered bedside storage modules with warm halo LEDs',
+        'Recessed curtain pockets with concealed perimeter lighting',
+        'Custom bathroom floating quartz top vanities'
+      ],
+      featuresAm: [
+        'ከጣሪያ እስከ ወለል የሚደርስ የመኝታ ክፍል የእንጨት ግድግዳ',
+        'ተንሳፋፊ ኮሞዲኖዎች ከኤልኢዲ መብራት ጋር',
+        'መጋረጃ መደበቂያ ክፍተቶች ከጣሪያ መብራት ጋር',
+        'የመታጠቢያ ቤት ተንሳፋፊ ካቢኔቶች'
+      ]
+    },
+    {
+      id: 'site-08-flagship-villa-estate',
+      title: 'Project Site 8 - Flagship Modern Villa Complex',
+      titleAm: 'ፕሮጀክት ሳይት 8 - ዋና የቅንጦት ቪላ ኮምፕሌክስ ፊኒሺንግ',
+      category: 'residential',
+      categoryLabel: 'Flagship Villa Complex',
+      categoryLabelAm: 'ዋና የቅንጦት ቪላ',
+      location: 'Addis Ababa Landmark Site',
+      locationAm: 'አዲስ አበባ',
+      scope: 'Full Turnkey Villa Finishing: Gypsum, Lighting, Kitchen, Doors, Balustrades, Pergolas',
+      scopeAm: 'ሙሉ የተሟላ ፊኒሺንግ: ጂፕሰም፣ መብራት፣ ኩሽና፣ በሮች፣ በረንዳዎችና ፐርጎላ',
+      year: '2024-2025',
+      description: 'Our flagship 9-photo project site showcasing complete end-to-end craftsmanship: multi-tiered coffered ceilings, architectural timber wall panels, luxury modular kitchens, bespoke interior doors, and outdoor terrace pergolas.',
+      descriptionAm: 'ባለ 9 ፎቶ የተሟላ የቪላ ፊኒሺንግ ፕሮጀክት፤ የጂፕሰም ጣሪያ፣ የእንጨት ግድግዳዎች፣ ዘመናዊ ኩሽና፣ የተመረጡ በሮች እና የቴራስ ፐርጎላ።',
+      featured: true,
+      image: '/images/projects/site-08/photo-01.jpg',
+      gallery: [
+        '/images/projects/site-08/photo-01.jpg',
+        '/images/projects/site-08/photo-02.jpg',
+        '/images/projects/site-08/photo-03.jpg',
+        '/images/projects/site-08/photo-04.jpg',
+        '/images/projects/site-08/photo-05.jpg',
+        '/images/projects/site-08/photo-06.jpg',
+        '/images/projects/site-08/photo-07.jpg',
+        '/images/projects/site-08/photo-08.jpg',
+        '/images/projects/site-08/photo-09.jpg'
+      ],
+      features: [
+        'Complete end-to-end turnkey architectural delivery',
+        'State-of-the-art modular kitchen with quartz waterfall counters',
+        'Bespoke solid hardwood internal door packages throughout',
+        'Outdoor composite timber pergola terrace lounge structure'
+      ],
+      featuresAm: [
+        'ከንድፍ እስከ ርክክብ የተሟላ የቪላ ፊኒሺንግ',
+        'ዘመናዊ የወጥ ቤት ካቢኔት ከኳርትዝ ደሴት ጋር',
+        'በሁሉም ክፍሎች የተገጠሙ ጠንካራ የተፈጥሮ እንጨት በሮች',
+        'የቴራስ ፐርጎላ የውጪ ማረፊያ ስፍራ'
+      ]
+    },
+    {
+      id: 'site-09-apartment-finishing',
+      title: 'Project Site 9 - Modern Apartment Interior Finishing',
+      titleAm: 'ፕሮጀክት ሳይት 9 - ዘመናዊ አፓርትመንት የውስጥ ፊኒሺንግ',
+      category: 'apartment',
+      categoryLabel: 'Apartment Finishing',
+      categoryLabelAm: 'አፓርትመንት ፊኒሺንግ',
+      location: 'Addisu Gebeya / Gullele Site',
+      locationAm: 'አዲሱ ገበያ / ጉለሌ ሳይት',
+      scope: 'Multi-Unit Apartment Interior Skimming, Gypsum, Kitchen, Tile Laying',
+      scopeAm: 'የአፓርትመንት ቤቶች ጂፕሰም፣ ኩሽና፣ ቀለም እና የወለል ንጣፍ',
+      year: '2023-2024',
+      description: 'Turnkey residential apartment unit transformation with high-durability acrylic wall finishes, modular cabinetry, porcelain tiled floors, and clean ceiling perimeter LED arrays.',
+      descriptionAm: 'ለአፓርትመንት ቤቶች የተሰራ ጥራት ያለው ፊኒሺንግ፤ ቆሻሻ የሚቋቋም ቀለም፣ የወጥ ቤት ካቢኔቶች፣ የወለል ንጣፍ እና የጣሪያ መብራቶች።',
+      featured: false,
+      image: '/images/projects/site-09/photo-01.jpg',
+      gallery: [
+        '/images/projects/site-09/photo-01.jpg',
+        '/images/projects/site-09/photo-02.jpg'
+      ],
+      features: [
+        'Durable multi-family residential interior specifications',
+        'Compact high-efficiency modular kitchen layout',
+        'Sound-isolated partition walls and acoustic ceiling drops'
+      ],
+      featuresAm: [
+        'ለአፓርትመንት ተስማሚ የሆነ ጥራት ያለው ፊኒሺንግ',
+        'ቦታ ቆጣቢ ዘመናዊ የወጥ ቤት ካቢኔት',
+        'ድምጽ የሚቀንሱ የክፍል መለያዎችና የጣሪያ ስራዎች'
+      ]
+    },
+    {
+      id: 'site-10-terrace-finishing',
+      title: 'Project Site 10 - Rooftop Terrace & Pergola Living',
+      titleAm: 'ፕሮጀክት ሳይት 10 - የጣሪያ ቴራስ እና ፐርጎላ ማረፊያ',
+      category: 'residential',
+      categoryLabel: 'Outdoor & Pergola',
+      categoryLabelAm: 'የውጪ ቴራስ እና ፐርጎላ',
+      location: 'Bulbula Mazoria Rooftop',
+      locationAm: 'ቡልቡላ ማዞሪያ',
+      scope: 'Rooftop Pergola Lounge, Weatherproof Timber Slats, Outdoor Kitchen Counter, Ambient Lighting',
+      scopeAm: 'የቴራስ ፐርጎላ፣ የአየር ሁኔታ የሚቋቋም እንጨት፣ የውጪ ማረፊያ እና መብራት',
+      year: '2024-2025',
+      description: 'Luxury rooftop terrace transformation combining weather-resistant composite timber pergola structures, integrated outdoor kitchen counter, ambient string and step lighting, and panoramic relaxation seating.',
+      descriptionAm: 'የጣሪያ ቴራስ ማረፊያ ቦታ፤ ዝናብና ፀሐይ የሚቋቋም የእንጨት ፐርጎላ፣ የውጪ ባር ጠረጴዛ እና የሚያምሩ የሌሊት መብራቶች ያሉት።',
+      featured: true,
+      image: '/images/projects/site-10/photo-01.jpg',
+      gallery: [
+        '/images/projects/site-10/photo-01.jpg',
+        '/images/projects/site-10/photo-02.jpg'
+      ],
+      features: [
+        'Weatherproof UV-stabilized composite timber pergola slats',
+        'Outdoor entertainment barbecue and beverage counter',
+        'Integrated waterproof IP67 LED deck and step illumination'
+      ],
+      featuresAm: [
+        'ዝናብና ፀሐይ የሚቋቋም የፐርጎላ ጣሪያ ስራ',
+        'የውጪ ባርቤኪው እና የመጠጥ ማስተናገጃ ጠረጴዛ',
+        'የውሃ መከላከያ ያላቸው የቴራስ መብራቶች'
+      ]
+    },
+    {
+      id: 'ebc-headquarters-atrium',
+      title: 'Ethiopian Broadcasting Corporation (EBC) - Grand Lobby & Atrium',
+      titleAm: 'የኢትዮጵያ ብሮድካስቲንግ ኮርፖሬሽን (ኢቢሲ) - ዋና ሎቢ እና አትሪየም',
+      category: 'commercial',
+      categoryLabel: 'Institutional / Commercial',
+      categoryLabelAm: 'መንግስታዊ / የንግድ ህንፃ',
+      location: 'EBC Headquarters, Addis Ababa',
+      locationAm: 'ኢቢሲ ዋና መስሪያ ቤት፣ አዲስ አበባ',
+      scope: 'Grand Lobby Atrium Finishing, Column Architectural Cladding, Corporate Reception, Ceiling Baffles',
+      scopeAm: 'የዋናው ሎቢ ፊኒሺንግ፣ የአምዶች የእንጨት ማስዋብ፣ የሪሴፕሽን አዳራሽ እና የጣሪያ ባፍሎች',
+      year: '2024-2025',
+      description: 'Institutional-grade lobby and atrium finishing for EBC, integrating high-capacity architectural lighting, streamlined corporate reception desks, and expansive wood slat column displays.',
+      descriptionAm: 'ለኢቢሲ የተሰራ ሰፊ የሎቢና የአትሪየም ፊኒሺንግ ስራ፤ ዘመናዊ መብራቶች፣ የኮርፖሬት ሪሴፕሽን እና የሚያማምሩ የእንጨት ስራዎች።',
+      featured: true,
+      image: '/images/projects/ebc/photo-01.jpg',
+      gallery: [
+        '/images/projects/ebc/photo-01.jpg',
+        '/images/projects/ebc/photo-02.jpg',
+        '/images/projects/ebc/photo-03.jpg',
+        '/images/projects/ebc/photo-04.jpg'
+      ],
+      features: [
+        'Architectural wood-wrapped circular structural columns',
+        'Commercial high-traffic polished flooring installation',
+        'Acoustic linear ceiling baffles with integrated LED linear luminaires',
+        'Executive reception desk with backlit corporate emblem'
+      ],
+      featuresAm: [
+        'በእንጨት የተዋቡ ትላልቅ የሎቢ አምዶች',
+        'ብዙ ሰዎችን የሚያስተናግድ ጠንካራ የሚያብረቀርቅ ወለል',
+        'የድምጽ ማስተካከያ ያላቸው የጣሪያ የእንጨት ባፍሎች ከመብራት ጋር',
+        'የበራ የድርጅቱ ስም ያለበት የሪሴፕሽን ጠረጴዛ'
+      ]
+    },
+    {
+      id: 'menanda-hotel-ballroom',
+      title: 'Menanda Hotel Bishoftu - Grand Ballroom & Facade',
+      titleAm: 'መናንዳ ሆቴል ቢሾፍቱ - ታላቁ የሰርግ አዳራሽ እና የውጪ ፊኒሺንግ',
       category: 'hospitality',
       categoryLabel: 'Hotel & Hospitality',
       categoryLabelAm: 'ሆቴል እና መስተንግዶ',
-      location: 'Bishoftu (Debre Zeit), Oromia',
+      location: 'Bishoftu (Debre Zeit)',
       locationAm: 'ቢሾፍቱ (ደብረዘይት)',
-      scope: 'Multi-Story Facade Finishing, Grand Ballroom, Banquet Ceiling & Banquet Woodworks',
-      scopeAm: 'የሙሉ ህንፃ የውጪ ፊኒሺንግ፣ ታላቁ የሰርግና የስብሰባ አዳራሽ፣ የጣሪያ ጌጦች እና የእንጨት ስራዎች',
-      year: '2023',
-      description: 'Full-scale finishing for Menanda Hotel in Bishoftu, including grand conference hall timber ceilings, ornate chandeliers, acoustic wooden wall paneling, and exterior facade detailing.',
-      descriptionAm: 'በቢሾፍቱ ከተማ የሚገኘው የመናንዳ ሆቴል የተሟላ የፊኒሺንግ ስራ፤ የኮንፈረንስ አዳራሽ የእንጨት ጣሪያ፣ ሻንደሊየሮች እና የውጪ ገፅታ ግንባታ።',
+      scope: 'Ballroom Coffered Timber Ceiling, Chandeliers, Multi-Story Hotel Facade',
+      scopeAm: 'የዋናው አዳራሽ የእንጨት ጣሪያ፣ ሻንደሊየሮች እና የሆቴሉ የውጪ ገፅታ',
+      year: '2023-2024',
+      description: 'Turnkey hotel finishing for Menanda Hotel in Bishoftu, including grand ballroom timber coffered ceilings, acoustic wall paneling, and multi-story commercial exterior rendering.',
+      descriptionAm: 'በቢሾፍቱ የሚገኘው የመናንዳ ሆቴል የተሟላ ፊኒሺንግ፤ የታላቁ አዳራሽ የእንጨት ጣሪያ፣ ሻንደሊየሮች እና የውጪ ገፅታ ግንባታ።',
       featured: true,
       image: '/images/pages/page-08.jpg',
       gallery: [
@@ -121,195 +343,14 @@ export class ProjectService {
         '/images/pages/page-09.jpg'
       ],
       features: [
-        'Ornate timber coffered ceiling in main ballroom',
-        'Acoustically engineered wall paneling for banquet hall',
-        'Multi-story commercial exterior facade finishing'
+        'Ornate timber coffered ceiling in main banquet ballroom',
+        'Acoustically engineered wooden wall paneling for crystal sound clarity',
+        'Multi-story commercial exterior rendering and weatherproofing'
       ],
       featuresAm: [
         'የዋናው አዳራሽ የእንጨት ኮፈርድ ጣሪያ',
         'ለድምጽ ጥራት የተዘጋጀ የግድግዳ የእንጨት ስራ',
         'ባለብዙ ፎቅ የሆቴል የውጪ ፊኒሺንግ'
-      ]
-    },
-    {
-      id: 'mahi-spa-salon',
-      title: 'Mahi Spa & Beauty Salon',
-      titleAm: 'ማሂ ስፓ እና የውበት ሳሎን',
-      category: 'commercial',
-      categoryLabel: 'Commercial / Spa Interior',
-      categoryLabelAm: 'የንግድ ተቋም / ስፓ እና ሳሎን',
-      location: 'Addis Ababa',
-      locationAm: 'አዲስ አበባ',
-      scope: 'Bespoke Reception Desk, Ambient Treatment Rooms, Styling Stations, Custom Wood Shelving',
-      scopeAm: 'የሪሴፕሽን ጠረጴዛ፣ የማሳጅና የስፓ ክፍሎች፣ የውበት ሳሎን ወንበሮች እና የእንጨት መደርደሪያዎች',
-      year: '2024',
-      description: 'A soothing and luxurious beauty destination interior with ergonomic custom reception counters, warm ambient accent lighting, live-edge wood displays, and private treatment suites.',
-      descriptionAm: 'ምቹ እና ማራኪ የስፓና የውበት ሳሎን የውስጥ ዲዛይን፤ የተዋበ የሪሴፕሽን ጠረጴዛ፣ ጸጥታ የሰፈነባቸው የማሳጅ ክፍሎች እና የእንጨት እቃዎች።',
-      featured: true,
-      image: '/images/pages/page-10.jpg',
-      gallery: [
-        '/images/pages/page-10.jpg'
-      ],
-      features: [
-        'Custom curved wood and solid surface reception desk',
-        'Warm mood lighting tailored for relaxation therapies',
-        'Built-in product display shelving units'
-      ],
-      featuresAm: [
-        'ዘመናዊ ቅርፅ ያለው የእንጨት ሪሴፕሽን ዴስክ',
-        'ለመዝናናት ምቹ የሆነ የተረጋጋ የመብራት ስርዓት',
-        'የውበት ምርቶች መደርደሪያ ካቢኔቶች'
-      ]
-    },
-    {
-      id: 'ebc-headquarters',
-      title: 'Ethiopian Broadcasting Corporation (EBC)',
-      titleAm: 'የኢትዮጵያ ብሮድካስቲንግ ኮርፖሬሽን (ኢቢሲ)',
-      category: 'commercial',
-      categoryLabel: 'Institutional / Commercial',
-      categoryLabelAm: 'መንግስታዊ / የንግድ ህንፃ',
-      location: 'Addis Ababa',
-      locationAm: 'አዲስ አበባ',
-      scope: 'Large Foyer Finishing, Architectural Column Wraps, Media Display Areas, Reception Lobby',
-      scopeAm: 'የዋናው ሎቢ ፊኒሺንግ፣ የአምድ ማስዋቢያዎች፣ የሚዲያ ማሳያ ቦታዎች እና የሪሴፕሽን አዳራሽ',
-      year: '2024-2025',
-      description: 'Institutional-grade lobby and atrium finishing for EBC, integrating high-capacity architectural lighting, streamlined corporate reception desks, and expansive wood slat displays.',
-      descriptionAm: 'ለኢቢሲ የተሰራ ሰፊ የሎቢና የአትሪየም ፊኒሺንግ ስራ፤ ዘመናዊ መብራቶች፣ የኮርፖሬት ሪሴፕሽን እና የሚያማምሩ የእንጨት ስራዎች።',
-      featured: true,
-      image: '/images/pages/page-11.jpg',
-      gallery: [
-        '/images/pages/page-11.jpg'
-      ],
-      features: [
-        'Corporate reception counter with integrated LED signage',
-        'Heavy-traffic polished floor finishing',
-        'Linear acoustic ceiling baffles and downlights'
-      ],
-      featuresAm: [
-        'የተቀናጀ የኤልኢዲ ስም ማሳያ ያለው የሪሴፕሽን ጠረጴዛ',
-        'የጸና ከፍተኛ ጥራት ያለው የወለል ንጣፍ',
-        'ዘመናዊ የጣሪያ መብራቶችና አኮስቲክ ባፍሎች'
-      ]
-    },
-    {
-      id: 'addisu-gebeya-apartment',
-      title: 'Addisu Gebeya Site Family Apartment',
-      titleAm: 'አዲሱ ገበያ የቤተሰብ አፓርትመንት ህንፃ',
-      category: 'apartment',
-      categoryLabel: 'Apartment Building',
-      categoryLabelAm: 'የአፓርትመንት ህንፃ',
-      location: 'Addisu Gebeya, Addis Ababa',
-      locationAm: 'አዲሱ ገበያ፣ አዲስ አበባ',
-      scope: 'Full Multi-Unit Finishing, Exterior Painting, Staircase Railings, Entrance Gateway',
-      scopeAm: 'የሙሉ አፓርትመንት ፊኒሺንግ፣ የውጪ ቀለም፣ ደረጃዎችና የመግቢያ በር ስራዎች',
-      year: '2023',
-      description: 'Comprehensive finishing for a modern family apartment building in Addisu Gebeya, covering external weather-resistant coatings, customized security gates, and staircase handrails.',
-      descriptionAm: 'በአዲሱ ገበያ የሚገኝ ባለብዙ ቤተሰብ አፓርትመንት የተሟላ የፊኒሺንግ ስራ፤ የውጪ ቀለም፣ የደህንነት በሮች እና የደረጃ መወጣጫዎች።',
-      featured: true,
-      image: '/images/pages/page-05.jpg',
-      gallery: [
-        '/images/pages/page-05.jpg'
-      ],
-      features: [
-        'Multi-unit residential finishing standard',
-        'Durable exterior silicone acrylic facade coating',
-        'Heavy gauge metal entrance gate and balustrades'
-      ],
-      featuresAm: [
-        'የአፓርትመንት ቤቶች ጥራት ያለው ፊኒሺንግ',
-        'የውጪ የአየር ሁኔታ የሚቋቋም ቀለም',
-        'የብረት መግቢያ በር እና የደረጃ መከላከያዎች'
-      ]
-    },
-    {
-      id: 'megenagna-luxury-apartment',
-      title: 'Megenagna Luxury Apartment',
-      titleAm: 'መገናኛ ሉክሰሪ አፓርትመንት ህንፃ',
-      category: 'apartment',
-      categoryLabel: 'High-Rise Apartment',
-      categoryLabelAm: 'ባለከፍተኛ ፎቅ አፓርትመንት',
-      location: 'Megenagna, Addis Ababa',
-      locationAm: 'መገናኛ፣ አዲስ አበባ',
-      scope: 'High-Rise Exterior Finishing, Scaffolding Execution, Balcony Glass, Ceiling Systems',
-      scopeAm: 'የባለከፍተኛ ፎቅ ህንፃ ውጪ ፊኒሺንግ፣ የስካፎልዲንግ ስራዎች፣ የበረንዳ መስታወትና የጣሪያ ስርዓት',
-      year: '2024-2025',
-      description: 'High-rise residential tower finishing in prime Megenagna corridor, demanding specialized exterior access, waterproofing, facade architectural panels, and unit interiors.',
-      descriptionAm: 'በመገናኛ የሚገኝ ባለከፍተኛ ፎቅ ዘመናዊ የመኖሪያ ህንፃ የውጪና የውስጥ ፊኒሺንግ፣ የውሃ መከላከያ እና የጣሪያ ስራ።',
-      featured: true,
-      image: '/images/pages/page-12.jpg',
-      gallery: [
-        '/images/pages/page-12.jpg'
-      ],
-      features: [
-        'Tower facade engineering & exterior rendering',
-        'Weather-sealed double-glazed balcony windows',
-        'Turnkey high-rise lobby & corridor finishing'
-      ],
-      featuresAm: [
-        'የከፍተኛ ፎቅ ውጪ ግድግዳ ኢንጂነሪንግ',
-        'የውሃና የአየር መከላከያ ያላቸው የበረንዳ መስታወቶች',
-        'የመግቢያ ሎቢ እና ኮሪደር ፊኒሺንግ'
-      ]
-    },
-    {
-      id: 'tafo-ccd-village',
-      title: 'Tafo CCD Village Luxury Villas',
-      titleAm: 'ታፎ ሲሲዲ ቪሌጅ ቪላዎች',
-      category: 'residential',
-      categoryLabel: 'Gated Community Villas',
-      categoryLabelAm: 'የቅንጦት ቪላ መንደር',
-      location: 'Tafo CCD Village, Addis Ababa Suburbs',
-      locationAm: 'ታፎ ሲሲዲ ቪሌጅ',
-      scope: 'Classical Portico Finishing, Roman Column Detailing, Landscape & Exterior Painting',
-      scopeAm: 'የክላሲካል ቪላ ፊኒሺንግ፣ የሮማን አምዶች ስራ፣ የአትክልት ስፍራና የውጪ ቀለም',
-      year: '2023',
-      description: 'Refined classical architectural finishes for luxury estate villas at Tafo CCD Village, showcasing grand entrance porticos, Corinthian-inspired columns, and landscaped surrounds.',
-      descriptionAm: 'በታፎ ሲሲዲ ቪሌጅ የሚገኙ የቅንጦት ቪላዎች ፊኒሺንግ፤ የታወቁ የሮማን አምዶች፣ ያማሩ በረንዳዎች እና የተሟላ የቀለም ስራ።',
-      featured: false,
-      image: '/images/pages/page-13.jpg',
-      gallery: [
-        '/images/pages/page-13.jpg'
-      ],
-      features: [
-        'Grand double-height entrance columns',
-        'Warm Tuscan exterior textured plaster',
-        'Custom ornamental entrance door woodwork'
-      ],
-      featuresAm: [
-        'ባለከፍተኛ የመግቢያ አምዶች',
-        'ውብ የውጪ ፕላስተር እና ቀለም',
-        'በልዩ ሁኔታ የተቀረጸ የእንጨት መግቢያ በር'
-      ]
-    },
-    {
-      id: 'addis-ababa-villa-set',
-      title: 'Addis Ababa Residential Villa Showcase',
-      titleAm: 'አዲስ አበባ የመኖሪያ ቪላ ፊኒሺንግ',
-      category: 'residential',
-      categoryLabel: 'Contemporary Villa',
-      categoryLabelAm: 'ዘመናዊ ቪላ',
-      location: 'Addis Ababa',
-      locationAm: 'አዲስ አበባ',
-      scope: 'Laser-Cut Arabesque Ceiling Insets, Stone Cladding Wall, Floating Vanity & Lighting',
-      scopeAm: 'የሌዘር ቅርጽ ጣሪያ፣ የድንጋይ ክላዲንግ ግድግዳ፣ ዘመናዊ መብራቶችና የሳሎን እቃዎች',
-      year: '2024',
-      description: 'An exemplary residential interior featuring custom laser-cut geometric lattice ceiling illumination, natural split-face stone TV wall, and minimalist luxury console cabinetry.',
-      descriptionAm: 'በአዲስ አበባ የተሰራ ልዩ ቪላ፤ የሌዘር ቅርጽ ጣሪያ መብራቶች፣ የተፈጥሮ ድንጋይ የቲቪ ግድግዳ እና ዘመናዊ የፈርኒቸር እቃዎች ያሉት።',
-      featured: true,
-      image: '/images/pages/page-14.jpg',
-      gallery: [
-        '/images/pages/page-14.jpg',
-        '/images/pages/page-15.jpg'
-      ],
-      features: [
-        'Intricate CNC laser-cut geometric ceiling lattice',
-        'Natural split-face stone cladding on main foyer wall',
-        'Floating console unit with soft close push-to-open drawers'
-      ],
-      featuresAm: [
-        'በሲኤንሲ ሌዘር የተቆረጠ የጣሪያ ጌጥ ከመብራት ጋር',
-        'የተፈጥሮ ድንጋይ የሳሎን ግድግዳ ስራ',
-        'ዘመናዊ ተንሳፋፊ የቲቪ እና የሳሎን ካቢኔት'
       ]
     }
   ];
