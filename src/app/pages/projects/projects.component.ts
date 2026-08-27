@@ -75,6 +75,13 @@ import { VideoShowcaseComponent } from '../../shared/components/video-showcase/v
                     {{ t.isAmharic() ? project.categoryLabelAm : project.categoryLabel }}
                   </span>
                 </div>
+                <div class="position-absolute top-0 end-0 m-3">
+                  @if (project.video) {
+                    <span class="badge bg-danger text-white border border-danger shadow-sm">
+                      <i class="bi bi-play-circle-fill me-1"></i> Video Reel
+                    </span>
+                  }
+                </div>
                 <div class="position-absolute bottom-0 end-0 m-3">
                   <span class="badge bg-black bg-opacity-75 text-white small">
                     <i class="bi bi-calendar3"></i> {{ project.year }}
@@ -98,7 +105,7 @@ import { VideoShowcaseComponent } from '../../shared/components/video-showcase/v
 
                 <div class="d-flex justify-content-between align-items-center pt-3 border-top border-secondary border-opacity-25">
                   <span class="small text-white-50">
-                    {{ project.gallery ? project.gallery.length + ' Photos' : '1 Photo' }}
+                    <i class="bi bi-images me-1"></i>{{ project.gallery ? project.gallery.length + ' Photos' : '1 Photo' }}
                   </span>
                   <button type="button" class="btn btn-outline-light btn-sm px-3">
                     <i class="bi bi-arrows-fullscreen me-1"></i> {{ t.t('btn.viewProject') }}

@@ -17,4 +17,5 @@ export interface Project {
   gallery: string[];
   features: string[];
   featuresAm: string[];
+  video?: string;
 }

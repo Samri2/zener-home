@@ -15,9 +15,16 @@ import { TranslationService } from '../../../core/services/translation.service';
           <!-- Header -->
           <div class="d-flex justify-content-between align-items-start mb-3 mb-md-4 border-bottom border-secondary border-opacity-25 pb-3">
             <div class="pe-2">
-              <span class="badge gradient-badge mb-2 px-3 py-1 text-uppercase small">
-                {{ t.isAmharic() ? project.categoryLabelAm : project.categoryLabel }}
-              </span>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge gradient-badge px-3 py-1 text-uppercase small">
+                  {{ t.isAmharic() ? project.categoryLabelAm : project.categoryLabel }}
+                </span>
+                @if (project.video) {
+                  <span class="badge bg-danger text-white px-2 py-1 small d-inline-flex align-items-center gap-1">
+                    <i class="bi bi-play-circle-fill"></i> Video Reel
+                  </span>
+                }
+              </div>
               <h3 class="text-white fw-bold mb-1 fs-4 fs-md-3">
                 {{ t.isAmharic() ? project.titleAm : project.title }}
               </h3>
@@ -38,24 +45,52 @@ import { TranslationService } from '../../../core/services/translation.service';
             </button>
           </div>
 
-          <!-- Main Gallery Image & Thumbnails -->
-          <div class="mb-3 mb-md-4">
-            <div class="main-image-wrapper rounded-3 overflow-hidden mb-2 mb-md-3">
-              <img [src]="activeImage() || project.image" [alt]="project.title" class="img-fluid w-100 object-fit-cover main-img">
+          <!-- Media View Tabs (if video available) -->
+          @if (project.video) {
+            <div class="d-flex gap-2 mb-3">
+              <button type="button" 
+                      class="btn btn-sm px-3 py-2 fw-semibold" 
+                      [class.btn-primary-orange]="!showVideoTab()"
+                      [class.btn-outline-secondary]="showVideoTab()"
+                      (click)="showVideoTab.set(false)">
+                <i class="bi bi-images me-1"></i> {{ t.isAmharic() ? 'ፎቶዎች' : 'Photo Gallery' }} ({{ project.gallery ? project.gallery.length : 1 }})
+              </button>
+              <button type="button" 
+                      class="btn btn-sm px-3 py-2 fw-semibold" 
+                      [class.btn-primary-orange]="showVideoTab()"
+                      [class.btn-outline-secondary]="!showVideoTab()"
+                      (click)="showVideoTab.set(true)">
+                <i class="bi bi-play-circle-fill me-1"></i> {{ t.isAmharic() ? 'የስራ ቦታ ቪዲዮ' : 'On-Site Video Walkthrough' }}
+              </button>
             </div>
-            @if (project.gallery && project.gallery.length > 1) {
-              <div class="d-flex gap-2 overflow-x-auto pb-2">
-                @for (img of project.gallery; track $index) {
-                  <button type="button" 
-                          class="thumb-btn border-0 p-0 rounded-2 overflow-hidden flex-shrink-0" 
-                          [class.active]="(activeImage() || project.image) === img"
-                          (click)="activeImage.set(img)">
-                    <img [src]="img" alt="Gallery thumbnail" class="thumb-img">
-                  </button>
-                }
+          }
+
+          <!-- Media Container -->
+          @if (showVideoTab() && project.video) {
+            <!-- Video Player -->
+            <div class="video-container rounded-3 overflow-hidden bg-black mb-3 mb-md-4">
+              <video [src]="project.video" controls autoplay class="w-100 h-100 modal-video"></video>
+            </div>
+          } @else {
+            <!-- Main Gallery Image & Thumbnails -->
+            <div class="mb-3 mb-md-4">
+              <div class="main-image-wrapper rounded-3 overflow-hidden mb-2 mb-md-3">
+                <img [src]="activeImage() || project.image" [alt]="project.title" class="img-fluid w-100 object-fit-cover main-img">
               </div>
-            }
-          </div>
+              @if (project.gallery && project.gallery.length > 1) {
+                <div class="d-flex gap-2 overflow-x-auto pb-2">
+                  @for (img of project.gallery; track $index) {
+                    <button type="button" 
+                            class="thumb-btn border-0 p-0 rounded-2 overflow-hidden flex-shrink-0" 
+                            [class.active]="(activeImage() || project.image) === img"
+                            (click)="activeImage.set(img)">
+                      <img [src]="img" alt="Gallery thumbnail" class="thumb-img">
+                    </button>
+                  }
+                </div>
+              }
+            </div>
+          }
 
           <!-- Scope & Description -->
           <div class="mb-3 mb-md-4">
@@ -65,7 +100,7 @@ import { TranslationService } from '../../../core/services/translation.service';
             <p class="text-light fw-medium mb-2 mb-md-3 small fs-md-6">
               {{ t.isAmharic() ? project.scopeAm : project.scope }}
             </p>
-            <p class="text-white-50 small">
+            <p class="text-light-sub small">
               {{ t.isAmharic() ? project.descriptionAm : project.description }}
             </p>
           </div>
@@ -118,6 +153,13 @@ import { TranslationService } from '../../../core/services/translation.service';
       max-height: 380px;
       object-fit: cover;
     }
+    .video-container {
+      max-height: 420px;
+    }
+    .modal-video {
+      max-height: 420px;
+      object-fit: contain;
+    }
     .thumb-btn {
       width: 70px;
       height: 52px;
@@ -164,9 +206,11 @@ export class ProjectModalComponent {
 
   readonly t = inject(TranslationService);
   readonly activeImage = signal<string | null>(null);
+  readonly showVideoTab = signal<boolean>(false);
 
   closeModal(): void {
     this.activeImage.set(null);
+    this.showVideoTab.set(false);
     this.close.emit();
   }
 
