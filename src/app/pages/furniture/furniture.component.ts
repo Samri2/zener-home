@@ -21,8 +21,8 @@ import { FurnitureModalComponent } from '../../shared/components/furniture-modal
         </h1>
         <p class="lead text-light-sub max-w-700 mx-auto mb-0">
           {{ t.isAmharic() 
-              ? 'በዘመናዊ የእንጨት ውጤቶች እና ጥራት ባላቸው ቁሳቁሶች የተሰሩ የሳሎን፣ የመኝታ ቤት እና የኩሽና እቃዎች' 
-              : 'Engineered modular cabinetry, bespoke TV media walls, executive desks, and luxury bedroom collections.' }}
+              ? 'በዘመናዊ የእንጨት ውጤቶች እና ጥራት ባላቸው ቁሳቁሶች የተሰሩ የሳሎን፣ የመኝታ ቤት፣ የኩሽና እና የቢሮ እቃዎች' 
+              : 'Engineered modular cabinetry, bespoke TV media walls, luxury master bedrooms, and executive workstations.' }}
         </p>
       </div>
     </div>
@@ -60,30 +60,29 @@ import { FurnitureModalComponent } from '../../shared/components/furniture-modal
                 (click)="selectedCategory.set('office')">
           {{ t.isAmharic() ? 'የቢሮ እቃዎች' : 'Executive Desks' }}
         </button>
-        <button type="button" 
-                class="btn filter-btn px-3 px-md-4 py-2 flex-shrink-0" 
-                [class.active]="selectedCategory() === 'dining'"
-                (click)="selectedCategory.set('dining')">
-          {{ t.isAmharic() ? 'የመመገቢያ ክፍል' : 'Dining Tables' }}
-        </button>
       </div>
 
       <!-- Furniture Items Grid -->
       <div class="row g-4 mb-5">
         @for (item of filteredItems(); track item.id) {
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="card-luxury h-100 overflow-hidden cursor-pointer" (click)="activeModalItem.set(item)">
-              <div class="img-zoom-container position-relative">
-                <img [src]="item.image" [alt]="item.name" class="img-fluid w-100 furniture-img object-fit-cover">
-                <div class="position-absolute top-0 start-0 m-3">
-                  <span class="badge bg-dark bg-opacity-75 text-warning border border-secondary border-opacity-50">
-                    {{ t.isAmharic() ? item.categoryLabelAm : item.categoryLabel }}
-                  </span>
+            <div class="card-luxury h-100 overflow-hidden cursor-pointer d-flex flex-column justify-content-between" (click)="activeModalItem.set(item)">
+              <div>
+                <div class="img-zoom-container position-relative">
+                  <img [src]="item.image" [alt]="item.name" class="img-fluid w-100 furniture-img object-fit-cover">
+                  <div class="position-absolute top-0 start-0 m-3">
+                    <span class="badge bg-dark bg-opacity-75 text-warning border border-secondary border-opacity-50">
+                      {{ t.isAmharic() ? item.categoryLabelAm : item.categoryLabel }}
+                    </span>
+                  </div>
+                  <div class="position-absolute bottom-0 end-0 m-3">
+                    <span class="badge bg-black bg-opacity-75 text-white small">
+                      <i class="bi bi-images me-1"></i> {{ item.gallery ? item.gallery.length + ' Photos' : '1 Photo' }}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="p-3 p-sm-4 d-flex flex-column justify-content-between flex-grow-1">
-                <div>
+                <div class="p-3 p-sm-4">
                   <h4 class="text-white fw-bold mb-2 fs-5">
                     {{ t.isAmharic() ? item.nameAm : item.name }}
                   </h4>
@@ -102,12 +101,13 @@ import { FurnitureModalComponent } from '../../shared/components/furniture-modal
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="d-flex justify-content-between align-items-center pt-2">
-                  <button type="button" class="btn btn-outline-light btn-sm w-100">
-                    <i class="bi bi-info-circle me-1"></i> {{ t.isAmharic() ? 'ዝርዝር መረጃ ይመልከቱ' : 'View Specs & Order' }}
-                  </button>
-                </div>
+              <div class="p-3 p-sm-4 pt-0">
+                <button type="button" class="btn btn-outline-light btn-sm w-100 d-flex align-items-center justify-content-center gap-2">
+                  <i class="bi bi-arrows-fullscreen"></i>
+                  <span>{{ t.isAmharic() ? 'ዝርዝር ፎቶዎችን ይመልከቱ' : 'View Gallery & Specs' }}</span>
+                </button>
               </div>
 
             </div>
@@ -163,11 +163,11 @@ import { FurnitureModalComponent } from '../../shared/components/furniture-modal
       box-shadow: 0 4px 15px rgba(232, 106, 23, 0.35);
     }
     .furniture-img {
-      height: 220px;
+      height: 240px;
     }
     @media (min-width: 768px) {
       .furniture-img {
-        height: 240px;
+        height: 260px;
       }
     }
     .cursor-pointer {

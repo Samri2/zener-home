@@ -13,6 +13,9 @@ export interface FurnitureItem {
   description: string;
   descriptionAm: string;
   image: string;
+  gallery?: string[];
+  features?: string[];
+  featuresAm?: string[];
   featured: boolean;
   leadTime: string;
 }
