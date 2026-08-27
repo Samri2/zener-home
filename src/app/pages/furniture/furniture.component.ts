@@ -21,8 +21,8 @@ import { FurnitureModalComponent } from '../../shared/components/furniture-modal
         </h1>
         <p class="lead text-light-sub max-w-700 mx-auto mb-0">
           {{ t.isAmharic() 
-              ? 'በዘመናዊ የእንጨት ውጤቶች እና ጥራት ባላቸው ቁሳቁሶች የተሰሩ የሳሎን፣ የመኝታ ቤት፣ የኩሽና እና የቢሮ እቃዎች' 
-              : 'Engineered modular cabinetry, bespoke TV media walls, luxury master bedrooms, and executive workstations.' }}
+              ? 'በዘመናዊ የእንጨት ውጤቶች እና ጥራት ባላቸው ቁሳቁሶች የተሰሩ የሳሎን፣ የመኝታ ቤት፣ የኩሽና፣ የበር እና የጠረጴዛ እቃዎች' 
+              : 'Engineered modular cabinetry, bespoke TV media walls, luxury sofas, kitchen systems, modern doors, and dining tables.' }}
         </p>
       </div>
     </div>
@@ -40,25 +40,25 @@ import { FurnitureModalComponent } from '../../shared/components/furniture-modal
                 class="btn filter-btn px-3 px-md-4 py-2 flex-shrink-0" 
                 [class.active]="selectedCategory() === 'living'"
                 (click)="selectedCategory.set('living')">
-          {{ t.isAmharic() ? 'የሳሎን እቃዎች' : 'Living & TV Units' }}
+          {{ t.isAmharic() ? 'ሶፋ እና የቲቪ ግድግዳ' : 'Sofas & TV Walls' }}
         </button>
         <button type="button" 
                 class="btn filter-btn px-3 px-md-4 py-2 flex-shrink-0" 
-                [class.active]="selectedCategory() === 'bedroom'"
-                (click)="selectedCategory.set('bedroom')">
-          {{ t.isAmharic() ? 'የመኝታ ክፍል' : 'Beds & Wardrobes' }}
+                [class.active]="selectedCategory() === 'dining'"
+                (click)="selectedCategory.set('dining')">
+          {{ t.isAmharic() ? 'የመመገቢያና ጠረጴዛዎች' : 'Dining & Tables' }}
         </button>
         <button type="button" 
                 class="btn filter-btn px-3 px-md-4 py-2 flex-shrink-0" 
                 [class.active]="selectedCategory() === 'custom'"
                 (click)="selectedCategory.set('custom')">
-          {{ t.isAmharic() ? 'የወጥ ቤት ካቢኔቶች' : 'Kitchen Cabinetry' }}
+          {{ t.isAmharic() ? 'የወጥ ቤት ካቢኔት እና በሮች' : 'Kitchen Cabinets & Doors' }}
         </button>
         <button type="button" 
                 class="btn filter-btn px-3 px-md-4 py-2 flex-shrink-0" 
-                [class.active]="selectedCategory() === 'office'"
-                (click)="selectedCategory.set('office')">
-          {{ t.isAmharic() ? 'የቢሮ እቃዎች' : 'Executive Desks' }}
+                [class.active]="selectedCategory() === 'bedroom'"
+                (click)="selectedCategory.set('bedroom')">
+          {{ t.isAmharic() ? 'መዋቢያ እና ልብስ ማስቀመጫ' : 'Dressing & Storage' }}
         </button>
       </div>
 
