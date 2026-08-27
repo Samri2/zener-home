@@ -4,12 +4,11 @@ import { TranslationService } from '../../core/services/translation.service';
 import { FurnitureService } from '../../core/services/furniture.service';
 import { FurnitureItem } from '../../core/models/furniture.model';
 import { FurnitureModalComponent } from '../../shared/components/furniture-modal/furniture-modal.component';
-import { VideoShowcaseComponent } from '../../shared/components/video-showcase/video-showcase.component';
 
 @Component({
   selector: 'app-furniture',
   standalone: true,
-  imports: [CommonModule, FurnitureModalComponent, VideoShowcaseComponent],
+  imports: [CommonModule, FurnitureModalComponent],
   template: `
     <!-- Header -->
     <div class="page-header py-4 py-md-5 bg-surface-glass border-bottom border-secondary border-opacity-25 mb-4 mb-md-5">
@@ -114,11 +113,6 @@ import { VideoShowcaseComponent } from '../../shared/components/video-showcase/v
             </div>
           </div>
         }
-      </div>
-
-      <!-- Workshop Videos Showcase -->
-      <div class="mb-5">
-        <app-video-showcase></app-video-showcase>
       </div>
 
       <!-- Custom Fabrication Banner -->
