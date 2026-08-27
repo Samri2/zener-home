@@ -63,7 +63,7 @@ import { ThemeService } from '../../../core/services/theme.service';
     <!-- Main Navigation Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-glass sticky-top py-2 py-lg-3">
       <div class="container">
-        <!-- Logo / Brand (Page 2 PDF Logo) -->
+        <!-- Logo / Brand -->
         <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
           <div class="brand-logo-container d-flex align-items-center justify-content-center flex-shrink-0">
             <img src="/images/logo.png" alt="Zener Home Logo" class="brand-logo-img">
@@ -181,16 +181,19 @@ import { ThemeService } from '../../../core/services/theme.service';
     }
     .brand-logo-container {
       height: 44px;
+      width: 44px;
       background: #FFFFFF;
       border: 1px solid rgba(232, 106, 23, 0.4);
       border-radius: 8px;
-      padding: 3px 6px;
+      padding: 2px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
     }
     .brand-logo-img {
-      height: 36px;
-      width: auto;
-      object-fit: contain;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 6px;
     }
     .brand-title {
       font-size: 1.15rem;
